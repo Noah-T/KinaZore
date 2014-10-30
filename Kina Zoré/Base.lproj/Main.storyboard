@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cd2-rO-YrE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Subscribe View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="SubscribeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -134,6 +134,138 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1513.5" y="299"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pB8-C2-ylS">
+            <objects>
+                <viewController id="eZH-MY-si9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eij-Fb-Txw"/>
+                        <viewControllerLayoutGuide type="bottom" id="uvY-Zj-lpF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2pK-qN-W5v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaM-Ge-3Uc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Sign up for mailing list">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="2kf-Pz-cnq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLV-XQ-Rar">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="KZ Audio Player">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="u90-fZ-b3c" kind="show" id="yNl-OW-Far"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aLV-XQ-Rar" firstAttribute="top" secondItem="XaM-Ge-3Uc" secondAttribute="bottom" constant="8" id="HeD-d3-z5K"/>
+                            <constraint firstAttribute="centerX" secondItem="aLV-XQ-Rar" secondAttribute="centerX" id="KA3-1F-3Dw"/>
+                            <constraint firstAttribute="centerY" secondItem="XaM-Ge-3Uc" secondAttribute="centerY" id="pWH-Sd-wr0"/>
+                            <constraint firstAttribute="centerX" secondItem="XaM-Ge-3Uc" secondAttribute="centerX" id="zgd-pU-WJa"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="XaM-Ge-3Uc"/>
+                                <exclude reference="aLV-XQ-Rar"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="pWH-Sd-wr0"/>
+                                <exclude reference="zgd-pU-WJa"/>
+                                <exclude reference="HeD-d3-z5K"/>
+                                <exclude reference="KA3-1F-3Dw"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="XaM-Ge-3Uc"/>
+                                <include reference="aLV-XQ-Rar"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="pWH-Sd-wr0"/>
+                                <include reference="zgd-pU-WJa"/>
+                                <include reference="HeD-d3-z5K"/>
+                                <include reference="KA3-1F-3Dw"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="xiH-v7-NmI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iF8-rr-KXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="299"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UED-C6-FNM">
+            <objects>
+                <viewController id="u90-fZ-b3c" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2hb-zi-TrR"/>
+                        <viewControllerLayoutGuide type="bottom" id="FpZ-qm-4fg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zbb-wS-GIm">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hG5-H5-a3W">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="129" y="138" width="257" height="31"/>
+                                </variation>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RMQ-h4-FVJ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="21" y="131" width="44" height="44"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hG5-H5-a3W"/>
+                                <exclude reference="RMQ-h4-FVJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hG5-H5-a3W"/>
+                                <include reference="RMQ-h4-FVJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Pl-sJ-yJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1513.5" y="969"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cuu-Oz-JBb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cd2-rO-YrE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SQX-d5-M6q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eZH-MY-si9" kind="relationship" relationship="rootViewController" id="NEw-Tb-8CV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yoE-nJ-MYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-156" y="299"/>
         </scene>
     </scenes>
 </document>

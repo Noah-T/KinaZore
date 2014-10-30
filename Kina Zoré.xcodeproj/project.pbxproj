@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		BD8A7E3B6BA00BB01E6DDB02 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A783C63CE4E2362679925E /* libPods.a */; };
+		DEDC782C1A02C71300884366 /* NATHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC782B1A02C71300884366 /* NATHomeViewController.m */; };
+		DEDC782E1A02E3BE00884366 /* audiofile.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEDC782D1A02E3BE00884366 /* audiofile.mp3 */; };
 		DEEE358F1A01B9A000D80FEB /* ChimpKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEE358E1A01B9A000D80FEB /* ChimpKit.m */; };
 		DEEE35961A01B9C900D80FEB /* CKAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEE35911A01B9C900D80FEB /* CKAuthViewController.m */; };
 		DEEE35971A01B9C900D80FEB /* CKScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEE35931A01B9C900D80FEB /* CKScanViewController.m */; };
 		DEEE35981A01B9C900D80FEB /* CKSubscribeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEE35951A01B9C900D80FEB /* CKSubscribeAlertView.m */; };
 		DEF5EEE21A0178BC00620B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF5EEE11A0178BC00620B10 /* main.m */; };
 		DEF5EEE51A0178BC00620B10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF5EEE41A0178BC00620B10 /* AppDelegate.m */; };
-		DEF5EEE81A0178BC00620B10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF5EEE71A0178BC00620B10 /* ViewController.m */; };
+		DEF5EEE81A0178BC00620B10 /* SubscribeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF5EEE71A0178BC00620B10 /* SubscribeViewController.m */; };
 		DEF5EEEB1A0178BC00620B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEF5EEE91A0178BC00620B10 /* Main.storyboard */; };
 		DEF5EEED1A0178BC00620B10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEF5EEEC1A0178BC00620B10 /* Images.xcassets */; };
 		DEF5EEF01A0178BC00620B10 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF5EEEE1A0178BC00620B10 /* LaunchScreen.xib */; };
@@ -33,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		52A783C63CE4E2362679925E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEDC782A1A02C71300884366 /* NATHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATHomeViewController.h; sourceTree = "<group>"; };
+		DEDC782B1A02C71300884366 /* NATHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATHomeViewController.m; sourceTree = "<group>"; };
+		DEDC782D1A02E3BE00884366 /* audiofile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audiofile.mp3; sourceTree = "<group>"; };
 		DEEE358D1A01B9A000D80FEB /* ChimpKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChimpKit.h; sourceTree = "<group>"; };
 		DEEE358E1A01B9A000D80FEB /* ChimpKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChimpKit.m; sourceTree = "<group>"; };
 		DEEE35901A01B9C900D80FEB /* CKAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAuthViewController.h; sourceTree = "<group>"; };
@@ -46,8 +51,8 @@
 		DEF5EEE11A0178BC00620B10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DEF5EEE31A0178BC00620B10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DEF5EEE41A0178BC00620B10 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DEF5EEE61A0178BC00620B10 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DEF5EEE71A0178BC00620B10 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DEF5EEE61A0178BC00620B10 /* SubscribeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubscribeViewController.h; sourceTree = "<group>"; };
+		DEF5EEE71A0178BC00620B10 /* SubscribeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubscribeViewController.m; sourceTree = "<group>"; };
 		DEF5EEEA1A0178BC00620B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEF5EEEC1A0178BC00620B10 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DEF5EEEF1A0178BC00620B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -136,10 +141,13 @@
 			children = (
 				DEF5EEE31A0178BC00620B10 /* AppDelegate.h */,
 				DEF5EEE41A0178BC00620B10 /* AppDelegate.m */,
-				DEF5EEE61A0178BC00620B10 /* ViewController.h */,
-				DEF5EEE71A0178BC00620B10 /* ViewController.m */,
+				DEF5EEE61A0178BC00620B10 /* SubscribeViewController.h */,
+				DEF5EEE71A0178BC00620B10 /* SubscribeViewController.m */,
 				DEBE619B1A01E122005F104C /* ChimpKit */,
 				DEF5EEE91A0178BC00620B10 /* Main.storyboard */,
+				DEDC782A1A02C71300884366 /* NATHomeViewController.h */,
+				DEDC782B1A02C71300884366 /* NATHomeViewController.m */,
+				DEDC782D1A02E3BE00884366 /* audiofile.mp3 */,
 				DEF5EEEC1A0178BC00620B10 /* Images.xcassets */,
 				DEF5EEEE1A0178BC00620B10 /* LaunchScreen.xib */,
 				DEF5EEDF1A0178BC00620B10 /* Supporting Files */,
@@ -256,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEF5EEEB1A0178BC00620B10 /* Main.storyboard in Resources */,
+				DEDC782E1A02E3BE00884366 /* audiofile.mp3 in Resources */,
 				DEF5EEF01A0178BC00620B10 /* LaunchScreen.xib in Resources */,
 				DEF5EEED1A0178BC00620B10 /* Images.xcassets in Resources */,
 			);
@@ -308,11 +317,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEF5EEE81A0178BC00620B10 /* ViewController.m in Sources */,
+				DEF5EEE81A0178BC00620B10 /* SubscribeViewController.m in Sources */,
 				DEF5EEE51A0178BC00620B10 /* AppDelegate.m in Sources */,
 				DEEE35961A01B9C900D80FEB /* CKAuthViewController.m in Sources */,
 				DEEE35981A01B9C900D80FEB /* CKSubscribeAlertView.m in Sources */,
 				DEEE358F1A01B9A000D80FEB /* ChimpKit.m in Sources */,
+				DEDC782C1A02C71300884366 /* NATHomeViewController.m in Sources */,
 				DEF5EEE21A0178BC00620B10 /* main.m in Sources */,
 				DEEE35971A01B9C900D80FEB /* CKScanViewController.m in Sources */,
 			);
