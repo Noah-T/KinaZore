@@ -95,6 +95,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DEBE619B1A01E122005F104C /* ChimpKit */ = {
+			isa = PBXGroup;
+			children = (
+				DEEE358D1A01B9A000D80FEB /* ChimpKit.h */,
+				DEEE358E1A01B9A000D80FEB /* ChimpKit.m */,
+				DEEE35901A01B9C900D80FEB /* CKAuthViewController.h */,
+				DEEE35911A01B9C900D80FEB /* CKAuthViewController.m */,
+				DEEE35921A01B9C900D80FEB /* CKScanViewController.h */,
+				DEEE35931A01B9C900D80FEB /* CKScanViewController.m */,
+				DEEE35941A01B9C900D80FEB /* CKSubscribeAlertView.h */,
+				DEEE35951A01B9C900D80FEB /* CKSubscribeAlertView.m */,
+			);
+			name = ChimpKit;
+			sourceTree = "<group>";
+		};
 		DEF5EED31A0178BC00620B10 = {
 			isa = PBXGroup;
 			children = (
@@ -123,14 +138,7 @@
 				DEF5EEE41A0178BC00620B10 /* AppDelegate.m */,
 				DEF5EEE61A0178BC00620B10 /* ViewController.h */,
 				DEF5EEE71A0178BC00620B10 /* ViewController.m */,
-				DEEE358D1A01B9A000D80FEB /* ChimpKit.h */,
-				DEEE358E1A01B9A000D80FEB /* ChimpKit.m */,
-				DEEE35901A01B9C900D80FEB /* CKAuthViewController.h */,
-				DEEE35911A01B9C900D80FEB /* CKAuthViewController.m */,
-				DEEE35921A01B9C900D80FEB /* CKScanViewController.h */,
-				DEEE35931A01B9C900D80FEB /* CKScanViewController.m */,
-				DEEE35941A01B9C900D80FEB /* CKSubscribeAlertView.h */,
-				DEEE35951A01B9C900D80FEB /* CKSubscribeAlertView.m */,
+				DEBE619B1A01E122005F104C /* ChimpKit */,
 				DEF5EEE91A0178BC00620B10 /* Main.storyboard */,
 				DEF5EEEC1A0178BC00620B10 /* Images.xcassets */,
 				DEF5EEEE1A0178BC00620B10 /* LaunchScreen.xib */,

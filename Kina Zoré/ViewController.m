@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *zipCodeTextField;
 @property (nonatomic, copy) ChimpKitRequestCompletionBlock completionHandler;
 
 
@@ -54,7 +55,8 @@
 //   }
     
     NSDictionary *params = @{ @"id": @"878629c097"
-                             , @"email": @{@"email": self.emailTextField.text}, @"merge_vars": @{@"FNAME": self.firstNameTextField.text, @"LName": self.lastNameTextField.text, @"new-email" : self.emailTextField.text}};
+                              , @"email": @{@"email": self.emailTextField.text}, @"merge_vars": @{@"FIRSTNAME": self.firstNameTextField.text, @"LASTNAME": self.lastNameTextField.text, @"ZIPCODE" : self.zipCodeTextField.text, @"new-email" : self.emailTextField.text}};
+    NSLog(@"params: %@", params);
 [[ChimpKit sharedKit]callApiMethod:@"lists/subscribe" withApiKey:@"db02af20c5f964d668e994e7d1785968-us5" params:params andCompletionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
     NSLog(@"response: %@", response);
     NSLog(@"error: %@", error);
