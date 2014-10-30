@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLe-Sm-dSQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Subscribe">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="subscribePressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nwB-h7-P89"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iaB-JR-Bxg">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="crA-6P-HG9">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWj-xB-12s">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iaB-JR-Bxg" firstAttribute="top" secondItem="crA-6P-HG9" secondAttribute="bottom" constant="8" id="3Fh-H3-buk"/>
+                            <constraint firstItem="crA-6P-HG9" firstAttribute="top" secondItem="OWj-xB-12s" secondAttribute="bottom" constant="8" id="IPv-XC-Pxb"/>
+                            <constraint firstItem="iaB-JR-Bxg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="OWD-47-JMi"/>
+                            <constraint firstItem="OWj-xB-12s" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="QJ3-Lf-NkJ"/>
+                            <constraint firstItem="crA-6P-HG9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="RBf-gP-rg8"/>
+                            <constraint firstItem="OWj-xB-12s" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="ceT-bx-JrD"/>
+                            <constraint firstItem="XLe-Sm-dSQ" firstAttribute="top" secondItem="iaB-JR-Bxg" secondAttribute="bottom" constant="39" id="eTP-aB-x2s"/>
+                            <constraint firstAttribute="centerY" secondItem="XLe-Sm-dSQ" secondAttribute="centerY" id="kh9-B6-6jB"/>
+                            <constraint firstAttribute="centerX" secondItem="crA-6P-HG9" secondAttribute="centerX" id="lVb-jw-HCC"/>
+                            <constraint firstItem="iaB-JR-Bxg" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="mb0-Qf-t8h"/>
+                            <constraint firstItem="crA-6P-HG9" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="rKV-kc-TGk"/>
+                            <constraint firstAttribute="centerX" secondItem="XLe-Sm-dSQ" secondAttribute="centerX" id="z8h-X6-mg0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="XLe-Sm-dSQ"/>
+                                <exclude reference="iaB-JR-Bxg"/>
+                                <exclude reference="crA-6P-HG9"/>
+                                <exclude reference="OWj-xB-12s"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="QJ3-Lf-NkJ"/>
+                                <exclude reference="ceT-bx-JrD"/>
+                                <exclude reference="IPv-XC-Pxb"/>
+                                <exclude reference="RBf-gP-rg8"/>
+                                <exclude reference="lVb-jw-HCC"/>
+                                <exclude reference="rKV-kc-TGk"/>
+                                <exclude reference="3Fh-H3-buk"/>
+                                <exclude reference="OWD-47-JMi"/>
+                                <exclude reference="mb0-Qf-t8h"/>
+                                <exclude reference="eTP-aB-x2s"/>
+                                <exclude reference="kh9-B6-6jB"/>
+                                <exclude reference="z8h-X6-mg0"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="XLe-Sm-dSQ"/>
+                                <include reference="iaB-JR-Bxg"/>
+                                <include reference="crA-6P-HG9"/>
+                                <include reference="OWj-xB-12s"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="QJ3-Lf-NkJ"/>
+                                <include reference="ceT-bx-JrD"/>
+                                <include reference="IPv-XC-Pxb"/>
+                                <include reference="RBf-gP-rg8"/>
+                                <include reference="lVb-jw-HCC"/>
+                                <include reference="rKV-kc-TGk"/>
+                                <include reference="3Fh-H3-buk"/>
+                                <include reference="OWD-47-JMi"/>
+                                <include reference="mb0-Qf-t8h"/>
+                                <include reference="eTP-aB-x2s"/>
+                                <include reference="kh9-B6-6jB"/>
+                                <include reference="z8h-X6-mg0"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="iaB-JR-Bxg" id="PdJ-0u-Dcg"/>
+                        <outlet property="firstNameTextField" destination="OWj-xB-12s" id="Cev-uR-38c"/>
+                        <outlet property="lastNameTextField" destination="crA-6P-HG9" id="7cF-KE-phW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

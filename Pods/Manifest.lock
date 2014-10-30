@@ -1,0 +1,10 @@
+PODS:
+  - ChimpKit (3.1.1)
+
+DEPENDENCIES:
+  - ChimpKit
+
+SPEC CHECKSUMS:
+  ChimpKit: 23912164ebcad2c0405bf9c748dac317443d9d85
+
+COCOAPODS: 0.34.4
