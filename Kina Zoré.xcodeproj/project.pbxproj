@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD8A7E3B6BA00BB01E6DDB02 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A783C63CE4E2362679925E /* libPods.a */; };
+		DEC2584A1A041CFC00B3B87E /* NATAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */; };
 		DEDC782C1A02C71300884366 /* NATHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC782B1A02C71300884366 /* NATHomeViewController.m */; };
 		DEDC782E1A02E3BE00884366 /* audiofile.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEDC782D1A02E3BE00884366 /* audiofile.mp3 */; };
 		DEEE358F1A01B9A000D80FEB /* ChimpKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEE358E1A01B9A000D80FEB /* ChimpKit.m */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		52A783C63CE4E2362679925E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEC258481A041CFC00B3B87E /* NATAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATAudioPlayer.h; sourceTree = "<group>"; };
+		DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATAudioPlayer.m; sourceTree = "<group>"; };
 		DEDC782A1A02C71300884366 /* NATHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATHomeViewController.h; sourceTree = "<group>"; };
 		DEDC782B1A02C71300884366 /* NATHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATHomeViewController.m; sourceTree = "<group>"; };
 		DEDC782D1A02E3BE00884366 /* audiofile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audiofile.mp3; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				DEF5EEE71A0178BC00620B10 /* SubscribeViewController.m */,
 				DEBE619B1A01E122005F104C /* ChimpKit */,
 				DEF5EEE91A0178BC00620B10 /* Main.storyboard */,
+				DEC258481A041CFC00B3B87E /* NATAudioPlayer.h */,
+				DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */,
 				DEDC782A1A02C71300884366 /* NATHomeViewController.h */,
 				DEDC782B1A02C71300884366 /* NATHomeViewController.m */,
 				DEDC782D1A02E3BE00884366 /* audiofile.mp3 */,
@@ -322,6 +327,7 @@
 				DEEE35961A01B9C900D80FEB /* CKAuthViewController.m in Sources */,
 				DEEE35981A01B9C900D80FEB /* CKSubscribeAlertView.m in Sources */,
 				DEEE358F1A01B9A000D80FEB /* ChimpKit.m in Sources */,
+				DEC2584A1A041CFC00B3B87E /* NATAudioPlayer.m in Sources */,
 				DEDC782C1A02C71300884366 /* NATHomeViewController.m in Sources */,
 				DEF5EEE21A0178BC00620B10 /* main.m in Sources */,
 				DEEE35971A01B9C900D80FEB /* CKScanViewController.m in Sources */,
