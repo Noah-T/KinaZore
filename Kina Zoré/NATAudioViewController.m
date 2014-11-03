@@ -19,16 +19,24 @@
     // Do any additional setup after loading the view.
     self.audioPlayer = [[NATAudioPlayer alloc]init];
     [self setupAudioPlayer:@"AuDualanga"];
+    self.nowPlayingLabel.text = @"Au Dualanga";
 }
+
 - (IBAction)playSelectedSong:(UIButton *)sender {
     if ([[sender currentTitle]isEqualToString:@"Au Dualanga"]) {
         [self.audioPlayer initPlayer:@"AuDualanga" fileExtension:@"mp3"];
+        self.nowPlayingLabel.text = @"Au Dualanga";
+
         
     } else if ([[sender currentTitle]isEqualToString:@"Jam"]) {
         [self.audioPlayer initPlayer:@"Jam" fileExtension:@"mp3"];
+        self.nowPlayingLabel.text = @"6/8 Jam";
+
         
     } else if ([[sender currentTitle]isEqualToString:@"Xitsungo Xa Africa"]){
         [self.audioPlayer initPlayer:@"Xitsungo Xa Africa" fileExtension:@"mp3"];
+        self.nowPlayingLabel.text = @"Xitsungo Xa Africa";
+
         
     }
     
@@ -60,13 +68,14 @@
 
 -(IBAction)playAudioPressed:(id)playButton
 {
+    NSLog(@"push!");
     //clear the timer from the run loop
     [self.timer invalidate];
     //play audio for first time, or if pause was pressed
     if (!self.isPaused) {
         //change the image from "play" to "pause"
-        
-        [self.playButton setBackgroundImage:[UIImage imageNamed:@"audioplayer_pause.png"] forState:UIControlStateNormal];
+        NSLog(@"start playing");
+        [self.playButton setBackgroundImage:[UIImage imageNamed:@"pause-button (1)"] forState:UIControlStateNormal];
         
         
         
@@ -80,13 +89,14 @@
     } else {
         //player is paused and button is pressed again
         //[UIImage imageNamed:@"audioplayer_play.png"]
-        
-        [self.playButton setBackgroundImage:[UIImage imageNamed:@"audioplayer_play.png"] forState:UIControlStateNormal];
+        NSLog(@"stop playing");
+        [self.playButton setBackgroundImage:[UIImage imageNamed:@"play-button"] forState:UIControlStateNormal];
         
         [self.audioPlayer pauseAudio];
         self.isPaused = FALSE;
     }
 }
+
 
 //update time label display, current value of slider while audio is playing
 
@@ -120,6 +130,16 @@
     //done to stop update while user is currently scrubbing
     self.scrubbing = TRUE;
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    NSLog(@"disappear");
+    self.isPaused = YES;
+    [self.playButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+    [super viewWillDisappear:animated];
+}
+
 
 /*
  #pragma mark - Navigation

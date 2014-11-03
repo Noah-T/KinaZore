@@ -12,6 +12,7 @@
 		DEA6965D1A06E57D00BAC673 /* AuDualanga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEA6965C1A06E57D00BAC673 /* AuDualanga.mp3 */; };
 		DEA696601A06EC6F00BAC673 /* Xitsungo Xa Africa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEA6965F1A06EC6F00BAC673 /* Xitsungo Xa Africa.mp3 */; };
 		DEA696621A06ECDD00BAC673 /* Jam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEA696611A06ECDD00BAC673 /* Jam.mp3 */; };
+		DEADFFA21A0713C100251F65 /* KZ-app-icon1-01.png in Resources */ = {isa = PBXBuildFile; fileRef = DEADFFA11A0713C100251F65 /* KZ-app-icon1-01.png */; };
 		DEC2584A1A041CFC00B3B87E /* NATAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */; };
 		DEDC782C1A02C71300884366 /* NATHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC782B1A02C71300884366 /* NATHomeViewController.m */; };
 		DEEE358F1A01B9A000D80FEB /* ChimpKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEE358E1A01B9A000D80FEB /* ChimpKit.m */; };
@@ -44,6 +45,7 @@
 		DEA6965C1A06E57D00BAC673 /* AuDualanga.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AuDualanga.mp3; sourceTree = "<group>"; };
 		DEA6965F1A06EC6F00BAC673 /* Xitsungo Xa Africa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Xitsungo Xa Africa.mp3"; sourceTree = "<group>"; };
 		DEA696611A06ECDD00BAC673 /* Jam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Jam.mp3; sourceTree = "<group>"; };
+		DEADFFA11A0713C100251F65 /* KZ-app-icon1-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KZ-app-icon1-01.png"; sourceTree = "<group>"; };
 		DEC258481A041CFC00B3B87E /* NATAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATAudioPlayer.h; sourceTree = "<group>"; };
 		DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATAudioPlayer.m; sourceTree = "<group>"; };
 		DEDC782A1A02C71300884366 /* NATHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATHomeViewController.h; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				DEDC782A1A02C71300884366 /* NATHomeViewController.h */,
 				DEDC782B1A02C71300884366 /* NATHomeViewController.m */,
 				DEF5EEEC1A0178BC00620B10 /* Images.xcassets */,
+				DEADFFA11A0713C100251F65 /* KZ-app-icon1-01.png */,
 				DEF5EEEE1A0178BC00620B10 /* LaunchScreen.xib */,
 				DEF5EEDF1A0178BC00620B10 /* Supporting Files */,
 			);
@@ -279,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEADFFA21A0713C100251F65 /* KZ-app-icon1-01.png in Resources */,
 				DEF5EEEB1A0178BC00620B10 /* Main.storyboard in Resources */,
 				DEF5EEF01A0178BC00620B10 /* LaunchScreen.xib in Resources */,
 				DEA696621A06ECDD00BAC673 /* Jam.mp3 in Resources */,
@@ -468,6 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Kina Zoré/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -479,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Kina Zoré/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cd2-rO-YrE">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -244,11 +245,12 @@
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lf6-Q8-kZl">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.89411764709999997" green="0.58039215690000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="BDK-UW-cZi"/>
                                             <constraint firstAttribute="width" constant="65" id="rSv-gy-0i6"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="audioplayer_play"/>
+                                        <state key="normal" backgroundImage="play-button"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="BDK-UW-cZi"/>
@@ -278,7 +280,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.89411764705882357" green="0.58039215686274515" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="lf6-Q8-kZl" firstAttribute="leading" secondItem="Ihl-7F-dav" secondAttribute="leading" constant="8" id="0Xv-7n-rYd">
                                         <variation key="widthClass=compact" constant="0.0"/>
@@ -307,16 +309,16 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="XOf-mg-F9h"/>
-                                        <exclude reference="0Xv-7n-rYd"/>
-                                        <exclude reference="Kcd-Da-l0h"/>
                                         <exclude reference="BMj-hb-ihK"/>
                                         <exclude reference="Mjd-d9-Be2"/>
                                         <exclude reference="Utl-kd-yer"/>
-                                        <exclude reference="a93-bN-VVE"/>
-                                        <exclude reference="d5E-ap-Q9x"/>
                                         <exclude reference="2BU-1B-WMq"/>
                                         <exclude reference="DXA-es-YSn"/>
                                         <exclude reference="tUC-7F-oMx"/>
+                                        <exclude reference="a93-bN-VVE"/>
+                                        <exclude reference="d5E-ap-Q9x"/>
+                                        <exclude reference="0Xv-7n-rYd"/>
+                                        <exclude reference="Kcd-Da-l0h"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -328,16 +330,16 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="XOf-mg-F9h"/>
-                                        <include reference="0Xv-7n-rYd"/>
-                                        <include reference="Kcd-Da-l0h"/>
                                         <include reference="BMj-hb-ihK"/>
                                         <include reference="Mjd-d9-Be2"/>
                                         <exclude reference="Utl-kd-yer"/>
-                                        <exclude reference="a93-bN-VVE"/>
-                                        <include reference="d5E-ap-Q9x"/>
                                         <include reference="2BU-1B-WMq"/>
                                         <include reference="DXA-es-YSn"/>
                                         <include reference="tUC-7F-oMx"/>
+                                        <exclude reference="a93-bN-VVE"/>
+                                        <include reference="d5E-ap-Q9x"/>
+                                        <include reference="0Xv-7n-rYd"/>
+                                        <include reference="Kcd-Da-l0h"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -368,12 +370,19 @@
                                     <action selector="playSelectedSong:" destination="u90-fZ-b3c" eventType="touchUpInside" id="7O3-OG-CUL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now playing: placeholder here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hal-p7-LvC">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Qwx-gT-IXS" secondAttribute="centerX" id="5Q9-pg-pxy"/>
                             <constraint firstAttribute="centerX" secondItem="dY8-B5-5E9" secondAttribute="centerX" id="DRP-pH-eFi"/>
                             <constraint firstItem="Ihl-7F-dav" firstAttribute="trailing" secondItem="zbb-wS-GIm" secondAttribute="trailingMargin" id="ERb-lM-6y4"/>
+                            <constraint firstItem="Ihl-7F-dav" firstAttribute="top" secondItem="hal-p7-LvC" secondAttribute="bottom" constant="52" id="Edj-eO-Zm6"/>
                             <constraint firstItem="Ihl-7F-dav" firstAttribute="leading" secondItem="zbb-wS-GIm" secondAttribute="leadingMargin" id="FjP-Vh-WsR"/>
                             <constraint firstItem="Qwx-gT-IXS" firstAttribute="top" secondItem="AWP-Vs-90q" secondAttribute="bottom" constant="22" id="MhF-2F-dSV"/>
                             <constraint firstItem="Ihl-7F-dav" firstAttribute="trailing" secondItem="zbb-wS-GIm" secondAttribute="trailingMargin" id="OvX-oH-iGb"/>
@@ -381,6 +390,8 @@
                             <constraint firstItem="Ihl-7F-dav" firstAttribute="top" secondItem="2hb-zi-TrR" secondAttribute="bottom" constant="150" id="TH2-HT-IXu"/>
                             <constraint firstAttribute="centerX" secondItem="AWP-Vs-90q" secondAttribute="centerX" id="aWd-vc-utQ"/>
                             <constraint firstItem="AWP-Vs-90q" firstAttribute="top" secondItem="Ihl-7F-dav" secondAttribute="bottom" constant="23" id="dAS-LH-N0b"/>
+                            <constraint firstItem="hal-p7-LvC" firstAttribute="trailing" secondItem="zbb-wS-GIm" secondAttribute="trailingMargin" id="m9E-We-Qh1"/>
+                            <constraint firstItem="hal-p7-LvC" firstAttribute="leading" secondItem="zbb-wS-GIm" secondAttribute="leadingMargin" id="vBV-p8-3wJ"/>
                             <constraint firstAttribute="centerX" secondItem="Ihl-7F-dav" secondAttribute="centerX" id="vL0-4O-6KD"/>
                             <constraint firstAttribute="centerY" secondItem="Ihl-7F-dav" secondAttribute="centerY" id="w50-n2-JL0"/>
                             <constraint firstItem="Ihl-7F-dav" firstAttribute="leading" secondItem="zbb-wS-GIm" secondAttribute="leadingMargin" id="wDa-xg-LpP"/>
@@ -392,9 +403,13 @@
                                 <exclude reference="AWP-Vs-90q"/>
                                 <exclude reference="Qwx-gT-IXS"/>
                                 <exclude reference="dY8-B5-5E9"/>
+                                <exclude reference="hal-p7-LvC"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="m9E-We-Qh1"/>
+                                <exclude reference="vBV-p8-3wJ"/>
                                 <exclude reference="ERb-lM-6y4"/>
+                                <exclude reference="Edj-eO-Zm6"/>
                                 <exclude reference="FjP-Vh-WsR"/>
                                 <exclude reference="OvX-oH-iGb"/>
                                 <exclude reference="TH2-HT-IXu"/>
@@ -416,9 +431,13 @@
                                 <include reference="AWP-Vs-90q"/>
                                 <include reference="Qwx-gT-IXS"/>
                                 <include reference="dY8-B5-5E9"/>
+                                <include reference="hal-p7-LvC"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="m9E-We-Qh1"/>
+                                <include reference="vBV-p8-3wJ"/>
                                 <include reference="ERb-lM-6y4"/>
+                                <include reference="Edj-eO-Zm6"/>
                                 <include reference="FjP-Vh-WsR"/>
                                 <exclude reference="OvX-oH-iGb"/>
                                 <include reference="TH2-HT-IXu"/>
@@ -438,6 +457,7 @@
                     <connections>
                         <outlet property="currentTimeSlider" destination="hG5-H5-a3W" id="720-ot-81a"/>
                         <outlet property="duration" destination="hy9-Fl-vbs" id="qmc-eF-4Ws"/>
+                        <outlet property="nowPlayingLabel" destination="hal-p7-LvC" id="qpd-Dn-Foa"/>
                         <outlet property="playButton" destination="lf6-Q8-kZl" id="jkU-Tz-GIm"/>
                         <outlet property="timeElapsed" destination="HdD-r2-iYK" id="jku-nE-Brv"/>
                     </connections>
@@ -466,6 +486,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="audioplayer_play" width="66" height="65"/>
+        <image name="play-button" width="112" height="119"/>
     </resources>
 </document>
