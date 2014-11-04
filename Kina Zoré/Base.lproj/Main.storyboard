@@ -167,9 +167,20 @@
                                     <segue destination="u90-fZ-b3c" kind="show" id="yNl-OW-Far"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS3-Ln-zU2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="j6v-tt-M0V" kind="show" id="d8T-Ht-kkn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BS3-Ln-zU2" firstAttribute="top" secondItem="aLV-XQ-Rar" secondAttribute="bottom" constant="8" id="4mv-DY-IIQ"/>
+                            <constraint firstAttribute="centerX" secondItem="BS3-Ln-zU2" secondAttribute="centerX" id="5KU-mN-ld5"/>
                             <constraint firstItem="aLV-XQ-Rar" firstAttribute="top" secondItem="XaM-Ge-3Uc" secondAttribute="bottom" constant="8" id="HeD-d3-z5K"/>
                             <constraint firstAttribute="centerX" secondItem="aLV-XQ-Rar" secondAttribute="centerX" id="KA3-1F-3Dw"/>
                             <constraint firstAttribute="centerY" secondItem="XaM-Ge-3Uc" secondAttribute="centerY" id="pWH-Sd-wr0"/>
@@ -179,24 +190,30 @@
                             <mask key="subviews">
                                 <exclude reference="XaM-Ge-3Uc"/>
                                 <exclude reference="aLV-XQ-Rar"/>
+                                <exclude reference="BS3-Ln-zU2"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="pWH-Sd-wr0"/>
                                 <exclude reference="zgd-pU-WJa"/>
                                 <exclude reference="HeD-d3-z5K"/>
                                 <exclude reference="KA3-1F-3Dw"/>
+                                <exclude reference="4mv-DY-IIQ"/>
+                                <exclude reference="5KU-mN-ld5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="XaM-Ge-3Uc"/>
                                 <include reference="aLV-XQ-Rar"/>
+                                <include reference="BS3-Ln-zU2"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="pWH-Sd-wr0"/>
                                 <include reference="zgd-pU-WJa"/>
                                 <include reference="HeD-d3-z5K"/>
                                 <include reference="KA3-1F-3Dw"/>
+                                <include reference="4mv-DY-IIQ"/>
+                                <include reference="5KU-mN-ld5"/>
                             </mask>
                         </variation>
                     </view>
@@ -205,6 +222,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iF8-rr-KXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="762" y="299"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="5ML-3g-Slx">
+            <objects>
+                <viewController id="j6v-tt-M0V" customClass="NATCalendarViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vix-A3-4HE"/>
+                        <viewControllerLayoutGuide type="bottom" id="rTD-he-MvE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FzV-TC-K43">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar data will go here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BR7-jg-k1U">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="BR7-jg-k1U" secondAttribute="centerY" id="13M-T3-zzU"/>
+                            <constraint firstAttribute="centerX" secondItem="BR7-jg-k1U" secondAttribute="centerX" id="ofR-tI-aD6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="BR7-jg-k1U"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="13M-T3-zzU"/>
+                                <exclude reference="ofR-tI-aD6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="BR7-jg-k1U"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="13M-T3-zzU"/>
+                                <include reference="ofR-tI-aD6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysZ-hb-Mfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="486" y="993"/>
         </scene>
         <!--Audio View Controller-->
         <scene sceneID="UED-C6-FNM">
@@ -408,6 +472,12 @@
                             <mask key="constraints">
                                 <exclude reference="m9E-We-Qh1"/>
                                 <exclude reference="vBV-p8-3wJ"/>
+                                <exclude reference="aWd-vc-utQ"/>
+                                <exclude reference="dAS-LH-N0b"/>
+                                <exclude reference="5Q9-pg-pxy"/>
+                                <exclude reference="MhF-2F-dSV"/>
+                                <exclude reference="DRP-pH-eFi"/>
+                                <exclude reference="QXd-9F-T6g"/>
                                 <exclude reference="ERb-lM-6y4"/>
                                 <exclude reference="Edj-eO-Zm6"/>
                                 <exclude reference="FjP-Vh-WsR"/>
@@ -417,12 +487,6 @@
                                 <exclude reference="w50-n2-JL0"/>
                                 <exclude reference="wDa-xg-LpP"/>
                                 <exclude reference="wa1-cK-1NP"/>
-                                <exclude reference="aWd-vc-utQ"/>
-                                <exclude reference="dAS-LH-N0b"/>
-                                <exclude reference="5Q9-pg-pxy"/>
-                                <exclude reference="MhF-2F-dSV"/>
-                                <exclude reference="DRP-pH-eFi"/>
-                                <exclude reference="QXd-9F-T6g"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -436,6 +500,12 @@
                             <mask key="constraints">
                                 <include reference="m9E-We-Qh1"/>
                                 <include reference="vBV-p8-3wJ"/>
+                                <include reference="aWd-vc-utQ"/>
+                                <include reference="dAS-LH-N0b"/>
+                                <include reference="5Q9-pg-pxy"/>
+                                <include reference="MhF-2F-dSV"/>
+                                <include reference="DRP-pH-eFi"/>
+                                <include reference="QXd-9F-T6g"/>
                                 <include reference="ERb-lM-6y4"/>
                                 <include reference="Edj-eO-Zm6"/>
                                 <include reference="FjP-Vh-WsR"/>
@@ -445,12 +515,6 @@
                                 <exclude reference="w50-n2-JL0"/>
                                 <exclude reference="wDa-xg-LpP"/>
                                 <exclude reference="wa1-cK-1NP"/>
-                                <include reference="aWd-vc-utQ"/>
-                                <include reference="dAS-LH-N0b"/>
-                                <include reference="5Q9-pg-pxy"/>
-                                <include reference="MhF-2F-dSV"/>
-                                <include reference="DRP-pH-eFi"/>
-                                <include reference="QXd-9F-T6g"/>
                             </mask>
                         </variation>
                     </view>

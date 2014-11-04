@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BD8A7E3B6BA00BB01E6DDB02 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A783C63CE4E2362679925E /* libPods.a */; };
 		DE822A6B1A06D174000993B7 /* NATAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE822A6A1A06D174000993B7 /* NATAudioViewController.m */; };
+		DE9585CA1A0974380022E133 /* NATCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9585C91A0974380022E133 /* NATCalendarViewController.m */; };
 		DEA6965D1A06E57D00BAC673 /* AuDualanga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEA6965C1A06E57D00BAC673 /* AuDualanga.mp3 */; };
 		DEA696601A06EC6F00BAC673 /* Xitsungo Xa Africa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEA6965F1A06EC6F00BAC673 /* Xitsungo Xa Africa.mp3 */; };
 		DEA696621A06ECDD00BAC673 /* Jam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEA696611A06ECDD00BAC673 /* Jam.mp3 */; };
@@ -42,6 +43,8 @@
 		52A783C63CE4E2362679925E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE822A691A06D174000993B7 /* NATAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATAudioViewController.h; sourceTree = "<group>"; };
 		DE822A6A1A06D174000993B7 /* NATAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATAudioViewController.m; sourceTree = "<group>"; };
+		DE9585C81A0974380022E133 /* NATCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATCalendarViewController.h; sourceTree = "<group>"; };
+		DE9585C91A0974380022E133 /* NATCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATCalendarViewController.m; sourceTree = "<group>"; };
 		DEA6965C1A06E57D00BAC673 /* AuDualanga.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AuDualanga.mp3; sourceTree = "<group>"; };
 		DEA6965F1A06EC6F00BAC673 /* Xitsungo Xa Africa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Xitsungo Xa Africa.mp3"; sourceTree = "<group>"; };
 		DEA696611A06ECDD00BAC673 /* Jam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Jam.mp3; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				DEF5EEE71A0178BC00620B10 /* SubscribeViewController.m */,
 				DEBE619B1A01E122005F104C /* ChimpKit */,
 				DEF5EEE91A0178BC00620B10 /* Main.storyboard */,
+				DE9585C81A0974380022E133 /* NATCalendarViewController.h */,
+				DE9585C91A0974380022E133 /* NATCalendarViewController.m */,
 				DEC258481A041CFC00B3B87E /* NATAudioPlayer.h */,
 				DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */,
 				DE822A691A06D174000993B7 /* NATAudioViewController.h */,
@@ -341,6 +346,7 @@
 			files = (
 				DEF5EEE81A0178BC00620B10 /* SubscribeViewController.m in Sources */,
 				DEF5EEE51A0178BC00620B10 /* AppDelegate.m in Sources */,
+				DE9585CA1A0974380022E133 /* NATCalendarViewController.m in Sources */,
 				DEEE35961A01B9C900D80FEB /* CKAuthViewController.m in Sources */,
 				DEEE35981A01B9C900D80FEB /* CKSubscribeAlertView.m in Sources */,
 				DEEE358F1A01B9A000D80FEB /* ChimpKit.m in Sources */,
