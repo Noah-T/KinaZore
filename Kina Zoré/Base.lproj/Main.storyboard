@@ -169,7 +169,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS3-Ln-zU2">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Upcoming Shows">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -235,37 +235,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar data will go here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BR7-jg-k1U">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qWg-Az-NRJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Npa-aJ-xPh">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Npa-aJ-xPh" id="43a-V0-R7U">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="BR7-jg-k1U" secondAttribute="centerY" id="13M-T3-zzU"/>
-                            <constraint firstAttribute="centerX" secondItem="BR7-jg-k1U" secondAttribute="centerX" id="ofR-tI-aD6"/>
+                            <constraint firstItem="qWg-Az-NRJ" firstAttribute="top" secondItem="FzV-TC-K43" secondAttribute="topMargin" id="68B-it-pRc"/>
+                            <constraint firstItem="rTD-he-MvE" firstAttribute="top" secondItem="qWg-Az-NRJ" secondAttribute="bottom" id="bU0-oU-55p"/>
+                            <constraint firstItem="qWg-Az-NRJ" firstAttribute="leading" secondItem="FzV-TC-K43" secondAttribute="leadingMargin" id="e1y-HV-7qP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qWg-Az-NRJ" secondAttribute="trailing" constant="-25" id="tQq-lZ-ZGI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="BR7-jg-k1U"/>
+                                <exclude reference="qWg-Az-NRJ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="13M-T3-zzU"/>
-                                <exclude reference="ofR-tI-aD6"/>
+                                <exclude reference="68B-it-pRc"/>
+                                <exclude reference="e1y-HV-7qP"/>
+                                <exclude reference="tQq-lZ-ZGI"/>
+                                <exclude reference="bU0-oU-55p"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="BR7-jg-k1U"/>
+                                <include reference="qWg-Az-NRJ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="13M-T3-zzU"/>
-                                <include reference="ofR-tI-aD6"/>
+                                <include reference="68B-it-pRc"/>
+                                <include reference="e1y-HV-7qP"/>
+                                <include reference="tQq-lZ-ZGI"/>
+                                <include reference="bU0-oU-55p"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="calendarTableView" destination="qWg-Az-NRJ" id="Jda-mE-6Je"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysZ-hb-Mfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

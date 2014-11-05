@@ -10,4 +10,6 @@
 
 @interface NATCalendarViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableArray *eventArray;
+
 @end

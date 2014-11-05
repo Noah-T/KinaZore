@@ -7,8 +7,10 @@
 //
 
 #import "NATCalendarViewController.h"
+#import "AFNetworking.h"
 
-@interface NATCalendarViewController ()
+@interface NATCalendarViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 
 @end
 
@@ -17,37 +19,90 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.calendarTableView.delegate = self;
+    self.calendarTableView.dataSource = self;
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    NSString *calendarId = @"47ou48fasc70l0758i9lh76sr8@group.calendar.google.com";
+    NSString *calendarId = @"oe8l8miodc0gd5vilsirbqhink@group.calendar.google.com";
     NSString *apiKey = @"AIzaSyCAkVQVwMzmPHxbaLUAqvb6dYUwjKU5qnM";
-    NSString *urlFormat = [NSString stringWithFormat:@"https://www.googleapis.com/calendar/v3/calendars/%@/events?key=%@&fields=items(id,start,summary,status)", calendarId, apiKey];
+    NSString *urlFormat = [NSString stringWithFormat:@"https://www.googleapis.com/calendar/v3/calendars/%@/events?key=%@&fields=items(id,start,summary,status,location)", calendarId, apiKey];
     
-    NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithURL:[NSURL URLWithString:urlFormat]completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSLog(@"response is : %@", response);
-    }]resume];
-    
-
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager GET:urlFormat parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDateFormatter *dayFormatter, *timeFormatter, *finalPresentationFormatter;
+        dayFormatter = [[NSDateFormatter alloc]init];
+        dayFormatter.dateFormat = @"yyyy-mm-dd";
+        timeFormatter = [[NSDateFormatter alloc]init];
+        timeFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+        finalPresentationFormatter = [[NSDateFormatter alloc]init];
+        finalPresentationFormatter.dateFormat = @"dd-MM-yyyy";
+        
+        
+        
+        for (NSDictionary *eventData in responseObject[@"items"]) {
+            NSMutableDictionary *mutableEventData = [eventData mutableCopy];
+            if (!self.eventArray) {
+                self.eventArray = [NSMutableArray array];
+            }
+            
+            NSDate *date;
+            NSDate *todayDate = [NSDate date];
+            if (eventData[@"start"][@"date"]) {
+                date = [dayFormatter dateFromString:eventData[@"start"][@"date"]];
+                
+            } else if (eventData[@"start"][@"dateTime"]){
+                date = [timeFormatter dateFromString:eventData[@"start"][@"dateTime"]];
+                
+            }
+            
+            //if event date is after the current date
+            if ([date compare:todayDate] == NSOrderedDescending) {
+                NSLog(@"date has come through %@", date);
+                //format it into something more readable
+                NSString *formattedDate = [finalPresentationFormatter stringFromDate: date];
+                //add it to the event array
+                NSLog(@"formatted date is %@", formattedDate);
+                [mutableEventData setObject:formattedDate forKey:@"formattedDate"];
+                [self.eventArray addObject:mutableEventData];
+            }
+            
+            [self.calendarTableView reloadData];
+        }
+        NSLog(@"event array: %@", self.eventArray);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", error);
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSLog(@"count is %d", [self.eventArray count]);
+    return [self.eventArray count];
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    NSMutableDictionary *event = [self.eventArray objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [self.calendarTableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@ - %@", event[@"summary"], event[@"formattedDate"], event[@"location"]];
+    return cell;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
