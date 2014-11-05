@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BD8A7E3B6BA00BB01E6DDB02 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A783C63CE4E2362679925E /* libPods.a */; };
+		DE7480351A0AD58D003C1C68 /* CalendarDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7480341A0AD58D003C1C68 /* CalendarDetailViewController.m */; };
+		DE7480381A0ADC0D003C1C68 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7480361A0ADC0D003C1C68 /* EventKit.framework */; };
+		DE7480391A0ADC0D003C1C68 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7480371A0ADC0D003C1C68 /* EventKitUI.framework */; };
 		DE822A6B1A06D174000993B7 /* NATAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE822A6A1A06D174000993B7 /* NATAudioViewController.m */; };
 		DE9585CA1A0974380022E133 /* NATCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9585C91A0974380022E133 /* NATCalendarViewController.m */; };
 		DEA6965D1A06E57D00BAC673 /* AuDualanga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEA6965C1A06E57D00BAC673 /* AuDualanga.mp3 */; };
@@ -37,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		52A783C63CE4E2362679925E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE7480331A0AD58D003C1C68 /* CalendarDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailViewController.h; sourceTree = "<group>"; };
+		DE7480341A0AD58D003C1C68 /* CalendarDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailViewController.m; sourceTree = "<group>"; };
+		DE7480361A0ADC0D003C1C68 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		DE7480371A0ADC0D003C1C68 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		DE822A691A06D174000993B7 /* NATAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATAudioViewController.h; sourceTree = "<group>"; };
 		DE822A6A1A06D174000993B7 /* NATAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATAudioViewController.m; sourceTree = "<group>"; };
 		DE9585C81A0974380022E133 /* NATCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATCalendarViewController.h; sourceTree = "<group>"; };
@@ -72,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7480381A0ADC0D003C1C68 /* EventKit.framework in Frameworks */,
+				DE7480391A0ADC0D003C1C68 /* EventKitUI.framework in Frameworks */,
 				BD8A7E3B6BA00BB01E6DDB02 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +107,8 @@
 		A528A85A6A3C9E14BC6071F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE7480361A0ADC0D003C1C68 /* EventKit.framework */,
+				DE7480371A0ADC0D003C1C68 /* EventKitUI.framework */,
 				52A783C63CE4E2362679925E /* libPods.a */,
 			);
 			name = Frameworks;
@@ -134,6 +145,8 @@
 				DEF5EEE91A0178BC00620B10 /* Main.storyboard */,
 				DE9585C81A0974380022E133 /* NATCalendarViewController.h */,
 				DE9585C91A0974380022E133 /* NATCalendarViewController.m */,
+				DE7480331A0AD58D003C1C68 /* CalendarDetailViewController.h */,
+				DE7480341A0AD58D003C1C68 /* CalendarDetailViewController.m */,
 				DEC258481A041CFC00B3B87E /* NATAudioPlayer.h */,
 				DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */,
 				DE822A691A06D174000993B7 /* NATAudioViewController.h */,
@@ -321,6 +334,7 @@
 				DE9585CA1A0974380022E133 /* NATCalendarViewController.m in Sources */,
 				DE822A6B1A06D174000993B7 /* NATAudioViewController.m in Sources */,
 				DEC2584A1A041CFC00B3B87E /* NATAudioPlayer.m in Sources */,
+				DE7480351A0AD58D003C1C68 /* CalendarDetailViewController.m in Sources */,
 				DEDC782C1A02C71300884366 /* NATHomeViewController.m in Sources */,
 				DEF5EEE21A0178BC00620B10 /* main.m in Sources */,
 			);

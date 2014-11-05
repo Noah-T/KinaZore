@@ -245,6 +245,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Npa-aJ-xPh" id="43a-V0-R7U">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="x4U-yK-aJJ" kind="show" identifier="showCalendarDetail" id="ewV-bA-pQG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -253,8 +256,14 @@
                         <constraints>
                             <constraint firstItem="qWg-Az-NRJ" firstAttribute="top" secondItem="FzV-TC-K43" secondAttribute="topMargin" id="68B-it-pRc"/>
                             <constraint firstItem="rTD-he-MvE" firstAttribute="top" secondItem="qWg-Az-NRJ" secondAttribute="bottom" id="bU0-oU-55p"/>
+                            <constraint firstItem="qWg-Az-NRJ" firstAttribute="top" secondItem="vix-A3-4HE" secondAttribute="bottom" constant="82" id="doT-hZ-5JC">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="qWg-Az-NRJ" firstAttribute="leading" secondItem="FzV-TC-K43" secondAttribute="leadingMargin" id="e1y-HV-7qP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qWg-Az-NRJ" secondAttribute="trailing" constant="-25" id="tQq-lZ-ZGI"/>
+                            <constraint firstItem="qWg-Az-NRJ" firstAttribute="top" secondItem="FzV-TC-K43" secondAttribute="topMargin" id="lzN-ix-ve3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qWg-Az-NRJ" secondAttribute="trailing" constant="-25" id="tQq-lZ-ZGI">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -262,7 +271,9 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="68B-it-pRc"/>
+                                <exclude reference="doT-hZ-5JC"/>
                                 <exclude reference="e1y-HV-7qP"/>
+                                <exclude reference="lzN-ix-ve3"/>
                                 <exclude reference="tQq-lZ-ZGI"/>
                                 <exclude reference="bU0-oU-55p"/>
                             </mask>
@@ -272,8 +283,10 @@
                                 <include reference="qWg-Az-NRJ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="68B-it-pRc"/>
+                                <exclude reference="68B-it-pRc"/>
+                                <include reference="doT-hZ-5JC"/>
                                 <include reference="e1y-HV-7qP"/>
+                                <exclude reference="lzN-ix-ve3"/>
                                 <include reference="tQq-lZ-ZGI"/>
                                 <include reference="bU0-oU-55p"/>
                             </mask>
@@ -285,7 +298,98 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysZ-hb-Mfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="486" y="993"/>
+            <point key="canvasLocation" x="37.5" y="1345"/>
+        </scene>
+        <!--Calendar Detail View Controller-->
+        <scene sceneID="KWd-7m-Ozc">
+            <objects>
+                <viewController id="x4U-yK-aJJ" customClass="CalendarDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EgC-qv-LTZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qIh-GZ-0m5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BAg-jL-2iP">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Howdy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOh-LJ-gkm">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="179" y="289" width="54" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oul-3V-VhD">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="185" y="318" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEs-7S-zMH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="183" y="375" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="saveEvent:" destination="x4U-yK-aJJ" eventType="touchUpInside" id="uys-2o-Fnq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="SOh-LJ-gkm" secondAttribute="centerX" id="ETk-6i-awb"/>
+                            <constraint firstAttribute="centerX" secondItem="oul-3V-VhD" secondAttribute="centerX" id="SLI-cd-wC5"/>
+                            <constraint firstItem="SEs-7S-zMH" firstAttribute="top" secondItem="oul-3V-VhD" secondAttribute="bottom" constant="36" id="VOG-kp-xJV"/>
+                            <constraint firstAttribute="centerY" secondItem="SOh-LJ-gkm" secondAttribute="centerY" id="jnb-ie-Z4d"/>
+                            <constraint firstAttribute="centerX" secondItem="SEs-7S-zMH" secondAttribute="centerX" id="mMy-WB-aLf"/>
+                            <constraint firstItem="oul-3V-VhD" firstAttribute="top" secondItem="SOh-LJ-gkm" secondAttribute="bottom" constant="8" id="pyI-ct-pnb"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="SOh-LJ-gkm"/>
+                                <exclude reference="oul-3V-VhD"/>
+                                <exclude reference="SEs-7S-zMH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="ETk-6i-awb"/>
+                                <exclude reference="jnb-ie-Z4d"/>
+                                <exclude reference="SLI-cd-wC5"/>
+                                <exclude reference="pyI-ct-pnb"/>
+                                <exclude reference="VOG-kp-xJV"/>
+                                <exclude reference="mMy-WB-aLf"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="SOh-LJ-gkm"/>
+                                <include reference="oul-3V-VhD"/>
+                                <include reference="SEs-7S-zMH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="ETk-6i-awb"/>
+                                <include reference="jnb-ie-Z4d"/>
+                                <include reference="SLI-cd-wC5"/>
+                                <include reference="pyI-ct-pnb"/>
+                                <include reference="VOG-kp-xJV"/>
+                                <include reference="mMy-WB-aLf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="eventDateLabel" destination="oul-3V-VhD" id="nW8-tc-24o"/>
+                        <outlet property="eventTitleLabel" destination="SOh-LJ-gkm" id="Trf-dm-ChM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PNF-XX-Qjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745.5" y="1339"/>
         </scene>
         <!--Audio View Controller-->
         <scene sceneID="UED-C6-FNM">
