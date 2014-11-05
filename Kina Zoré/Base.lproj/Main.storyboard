@@ -193,12 +193,12 @@
                                 <exclude reference="BS3-Ln-zU2"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="4mv-DY-IIQ"/>
+                                <exclude reference="5KU-mN-ld5"/>
                                 <exclude reference="pWH-Sd-wr0"/>
                                 <exclude reference="zgd-pU-WJa"/>
                                 <exclude reference="HeD-d3-z5K"/>
                                 <exclude reference="KA3-1F-3Dw"/>
-                                <exclude reference="4mv-DY-IIQ"/>
-                                <exclude reference="5KU-mN-ld5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -208,12 +208,12 @@
                                 <include reference="BS3-Ln-zU2"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="4mv-DY-IIQ"/>
+                                <include reference="5KU-mN-ld5"/>
                                 <include reference="pWH-Sd-wr0"/>
                                 <include reference="zgd-pU-WJa"/>
                                 <include reference="HeD-d3-z5K"/>
                                 <include reference="KA3-1F-3Dw"/>
-                                <include reference="4mv-DY-IIQ"/>
-                                <include reference="5KU-mN-ld5"/>
                             </mask>
                         </variation>
                     </view>
@@ -232,6 +232,7 @@
                         <viewControllerLayoutGuide type="bottom" id="rTD-he-MvE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FzV-TC-K43">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar data will go here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BR7-jg-k1U">

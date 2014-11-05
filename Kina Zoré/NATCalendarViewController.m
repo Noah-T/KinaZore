@@ -22,15 +22,17 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSString *calendarId = @"1fg4tpnbnn5sanom55b99cuflo@group.calendar.google.com";
-    NSString *apiKey = @"AIzaSyBUOjVcsfVwc14xCaIQeEpCfk0AvVpjUcc";
-    NSString *urlFormat = @"https://www.googleapis.com/calendar/v3/calendars/%@/events?key=%@&fields=items(id,start,summary,status)";
-    NSString *calendarUrl = [NSString stringWithFormat:urlFormat, calendarId, apiKey];
+    
+    NSString *calendarId = @"47ou48fasc70l0758i9lh76sr8@group.calendar.google.com";
+    NSString *apiKey = @"AIzaSyCAkVQVwMzmPHxbaLUAqvb6dYUwjKU5qnM";
+    NSString *urlFormat = [NSString stringWithFormat:@"https://www.googleapis.com/calendar/v3/calendars/%@/events?key=%@&fields=items(id,start,summary,status)", calendarId, apiKey];
     
     NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithURL:[NSURL URLWithString:calendarUrl]completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSLog(@"response is: %@", response);
+    [[session dataTaskWithURL:[NSURL URLWithString:urlFormat]completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"response is : %@", response);
     }]resume];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
