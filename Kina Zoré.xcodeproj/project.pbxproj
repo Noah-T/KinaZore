@@ -16,10 +16,6 @@
 		DEADFFA21A0713C100251F65 /* KZ-app-icon1-01.png in Resources */ = {isa = PBXBuildFile; fileRef = DEADFFA11A0713C100251F65 /* KZ-app-icon1-01.png */; };
 		DEC2584A1A041CFC00B3B87E /* NATAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */; };
 		DEDC782C1A02C71300884366 /* NATHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC782B1A02C71300884366 /* NATHomeViewController.m */; };
-		DEEE358F1A01B9A000D80FEB /* ChimpKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEE358E1A01B9A000D80FEB /* ChimpKit.m */; };
-		DEEE35961A01B9C900D80FEB /* CKAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEE35911A01B9C900D80FEB /* CKAuthViewController.m */; };
-		DEEE35971A01B9C900D80FEB /* CKScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEE35931A01B9C900D80FEB /* CKScanViewController.m */; };
-		DEEE35981A01B9C900D80FEB /* CKSubscribeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEEE35951A01B9C900D80FEB /* CKSubscribeAlertView.m */; };
 		DEF5EEE21A0178BC00620B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF5EEE11A0178BC00620B10 /* main.m */; };
 		DEF5EEE51A0178BC00620B10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF5EEE41A0178BC00620B10 /* AppDelegate.m */; };
 		DEF5EEE81A0178BC00620B10 /* SubscribeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF5EEE71A0178BC00620B10 /* SubscribeViewController.m */; };
@@ -53,14 +49,6 @@
 		DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATAudioPlayer.m; sourceTree = "<group>"; };
 		DEDC782A1A02C71300884366 /* NATHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATHomeViewController.h; sourceTree = "<group>"; };
 		DEDC782B1A02C71300884366 /* NATHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATHomeViewController.m; sourceTree = "<group>"; };
-		DEEE358D1A01B9A000D80FEB /* ChimpKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChimpKit.h; sourceTree = "<group>"; };
-		DEEE358E1A01B9A000D80FEB /* ChimpKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChimpKit.m; sourceTree = "<group>"; };
-		DEEE35901A01B9C900D80FEB /* CKAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAuthViewController.h; sourceTree = "<group>"; };
-		DEEE35911A01B9C900D80FEB /* CKAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKAuthViewController.m; sourceTree = "<group>"; };
-		DEEE35921A01B9C900D80FEB /* CKScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKScanViewController.h; sourceTree = "<group>"; };
-		DEEE35931A01B9C900D80FEB /* CKScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKScanViewController.m; sourceTree = "<group>"; };
-		DEEE35941A01B9C900D80FEB /* CKSubscribeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSubscribeAlertView.h; sourceTree = "<group>"; };
-		DEEE35951A01B9C900D80FEB /* CKSubscribeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKSubscribeAlertView.m; sourceTree = "<group>"; };
 		DEF5EEDC1A0178BC00620B10 /* Kina Zoré.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kina Zoré.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF5EEE01A0178BC00620B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEF5EEE11A0178BC00620B10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -115,21 +103,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DEBE619B1A01E122005F104C /* ChimpKit */ = {
-			isa = PBXGroup;
-			children = (
-				DEEE358D1A01B9A000D80FEB /* ChimpKit.h */,
-				DEEE358E1A01B9A000D80FEB /* ChimpKit.m */,
-				DEEE35901A01B9C900D80FEB /* CKAuthViewController.h */,
-				DEEE35911A01B9C900D80FEB /* CKAuthViewController.m */,
-				DEEE35921A01B9C900D80FEB /* CKScanViewController.h */,
-				DEEE35931A01B9C900D80FEB /* CKScanViewController.m */,
-				DEEE35941A01B9C900D80FEB /* CKSubscribeAlertView.h */,
-				DEEE35951A01B9C900D80FEB /* CKSubscribeAlertView.m */,
-			);
-			name = ChimpKit;
-			sourceTree = "<group>";
-		};
 		DEF5EED31A0178BC00620B10 = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +131,6 @@
 				DEF5EEE41A0178BC00620B10 /* AppDelegate.m */,
 				DEF5EEE61A0178BC00620B10 /* SubscribeViewController.h */,
 				DEF5EEE71A0178BC00620B10 /* SubscribeViewController.m */,
-				DEBE619B1A01E122005F104C /* ChimpKit */,
 				DEF5EEE91A0178BC00620B10 /* Main.storyboard */,
 				DE9585C81A0974380022E133 /* NATCalendarViewController.h */,
 				DE9585C91A0974380022E133 /* NATCalendarViewController.m */,
@@ -347,14 +319,10 @@
 				DEF5EEE81A0178BC00620B10 /* SubscribeViewController.m in Sources */,
 				DEF5EEE51A0178BC00620B10 /* AppDelegate.m in Sources */,
 				DE9585CA1A0974380022E133 /* NATCalendarViewController.m in Sources */,
-				DEEE35961A01B9C900D80FEB /* CKAuthViewController.m in Sources */,
-				DEEE35981A01B9C900D80FEB /* CKSubscribeAlertView.m in Sources */,
-				DEEE358F1A01B9A000D80FEB /* ChimpKit.m in Sources */,
 				DE822A6B1A06D174000993B7 /* NATAudioViewController.m in Sources */,
 				DEC2584A1A041CFC00B3B87E /* NATAudioPlayer.m in Sources */,
 				DEDC782C1A02C71300884366 /* NATHomeViewController.m in Sources */,
 				DEF5EEE21A0178BC00620B10 /* main.m in Sources */,
-				DEEE35971A01B9C900D80FEB /* CKScanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
