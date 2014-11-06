@@ -43,7 +43,7 @@
         timeFormatter = [[NSDateFormatter alloc]init];
         timeFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
         finalPresentationFormatter = [[NSDateFormatter alloc]init];
-        finalPresentationFormatter.dateFormat = @"dd/MM/yyyy";
+        finalPresentationFormatter.dateFormat = @"MM/dd/yyyy";
          
         for (NSDictionary *eventData in responseObject[@"items"]) {
             NSMutableDictionary *mutableEventData = [eventData mutableCopy];

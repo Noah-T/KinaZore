@@ -22,6 +22,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLe-Sm-dSQ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Subscribe">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -49,7 +50,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.12939157200000001" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="w0M-ad-H05" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="005-Ra-QGu"/>
                             <constraint firstItem="iaB-JR-Bxg" firstAttribute="top" secondItem="crA-6P-HG9" secondAttribute="bottom" constant="8" id="3Fh-H3-buk"/>
@@ -137,6 +138,58 @@
             </objects>
             <point key="canvasLocation" x="1513.5" y="299"/>
         </scene>
+        <!--Radio View Controller-->
+        <scene sceneID="hcz-YA-ZDs">
+            <objects>
+                <viewController id="nDh-rN-w1X" customClass="NATRadioViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hd1-P4-Aha"/>
+                        <viewControllerLayoutGuide type="bottom" id="oqp-5v-TcL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9yE-oo-jP0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1h-VA-TfP">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Open Spotify">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openSpotify:" destination="nDh-rN-w1X" eventType="touchUpInside" id="16z-dQ-lRm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.12939157200000001" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="B1h-VA-TfP" secondAttribute="centerX" id="Ifx-hM-k60"/>
+                            <constraint firstAttribute="centerY" secondItem="B1h-VA-TfP" secondAttribute="centerY" id="rP5-tN-chC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="B1h-VA-TfP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Ifx-hM-k60"/>
+                                <exclude reference="rP5-tN-chC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="B1h-VA-TfP"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Ifx-hM-k60"/>
+                                <include reference="rP5-tN-chC"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ait-JX-FI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895.5" y="-494"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="pB8-C2-ylS">
             <objects>
@@ -152,6 +205,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaM-Ge-3Uc">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Sign up for mailing list">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -161,6 +215,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLV-XQ-Rar">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="KZ Audio Player">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -170,19 +225,32 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BS3-Ln-zU2">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Upcoming Shows">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="j6v-tt-M0V" kind="show" id="d8T-Ht-kkn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXq-aE-Vxb">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Kina Zoré Radio">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="nDh-rN-w1X" kind="show" id="F17-T2-PQp"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.12939157196969697" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="XaM-Ge-3Uc" firstAttribute="top" secondItem="iXq-aE-Vxb" secondAttribute="bottom" constant="8" id="45N-yL-5q9"/>
                             <constraint firstItem="BS3-Ln-zU2" firstAttribute="top" secondItem="aLV-XQ-Rar" secondAttribute="bottom" constant="8" id="4mv-DY-IIQ"/>
                             <constraint firstAttribute="centerX" secondItem="BS3-Ln-zU2" secondAttribute="centerX" id="5KU-mN-ld5"/>
                             <constraint firstItem="aLV-XQ-Rar" firstAttribute="top" secondItem="XaM-Ge-3Uc" secondAttribute="bottom" constant="8" id="HeD-d3-z5K"/>
                             <constraint firstAttribute="centerX" secondItem="aLV-XQ-Rar" secondAttribute="centerX" id="KA3-1F-3Dw"/>
+                            <constraint firstAttribute="centerX" secondItem="iXq-aE-Vxb" secondAttribute="centerX" id="hZH-5t-mX7"/>
                             <constraint firstAttribute="centerY" secondItem="XaM-Ge-3Uc" secondAttribute="centerY" id="pWH-Sd-wr0"/>
                             <constraint firstAttribute="centerX" secondItem="XaM-Ge-3Uc" secondAttribute="centerX" id="zgd-pU-WJa"/>
                         </constraints>
@@ -191,14 +259,17 @@
                                 <exclude reference="XaM-Ge-3Uc"/>
                                 <exclude reference="aLV-XQ-Rar"/>
                                 <exclude reference="BS3-Ln-zU2"/>
+                                <exclude reference="iXq-aE-Vxb"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="4mv-DY-IIQ"/>
                                 <exclude reference="5KU-mN-ld5"/>
+                                <exclude reference="45N-yL-5q9"/>
                                 <exclude reference="pWH-Sd-wr0"/>
                                 <exclude reference="zgd-pU-WJa"/>
                                 <exclude reference="HeD-d3-z5K"/>
                                 <exclude reference="KA3-1F-3Dw"/>
+                                <exclude reference="hZH-5t-mX7"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -206,14 +277,17 @@
                                 <include reference="XaM-Ge-3Uc"/>
                                 <include reference="aLV-XQ-Rar"/>
                                 <include reference="BS3-Ln-zU2"/>
+                                <include reference="iXq-aE-Vxb"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="4mv-DY-IIQ"/>
                                 <include reference="5KU-mN-ld5"/>
+                                <include reference="45N-yL-5q9"/>
                                 <include reference="pWH-Sd-wr0"/>
                                 <include reference="zgd-pU-WJa"/>
                                 <include reference="HeD-d3-z5K"/>
                                 <include reference="KA3-1F-3Dw"/>
+                                <include reference="hZH-5t-mX7"/>
                             </mask>
                         </variation>
                     </view>
@@ -239,12 +313,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Npa-aJ-xPh">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="JHK-sL-FS6" style="IBUITableViewCellStyleDefault" id="Npa-aJ-xPh">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Npa-aJ-xPh" id="43a-V0-R7U">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JHK-sL-FS6">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.12939157200000001" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="x4U-yK-aJJ" kind="show" identifier="showCalendarDetail" id="ewV-bA-pQG"/>
                                         </connections>
@@ -270,12 +356,12 @@
                                 <exclude reference="qWg-Az-NRJ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="bU0-oU-55p"/>
                                 <exclude reference="68B-it-pRc"/>
                                 <exclude reference="doT-hZ-5JC"/>
                                 <exclude reference="e1y-HV-7qP"/>
                                 <exclude reference="lzN-ix-ve3"/>
                                 <exclude reference="tQq-lZ-ZGI"/>
-                                <exclude reference="bU0-oU-55p"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -283,12 +369,12 @@
                                 <include reference="qWg-Az-NRJ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="bU0-oU-55p"/>
                                 <exclude reference="68B-it-pRc"/>
                                 <include reference="doT-hZ-5JC"/>
                                 <include reference="e1y-HV-7qP"/>
                                 <exclude reference="lzN-ix-ve3"/>
                                 <include reference="tQq-lZ-ZGI"/>
-                                <include reference="bU0-oU-55p"/>
                             </mask>
                         </variation>
                     </view>
@@ -309,40 +395,33 @@
                         <viewControllerLayoutGuide type="bottom" id="qIh-GZ-0m5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BAg-jL-2iP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Howdy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOh-LJ-gkm">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="179" y="289" width="54" height="21"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oul-3V-VhD">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="185" y="318" width="42" height="21"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEs-7S-zMH">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Add to my calendar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="183" y="375" width="46" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="saveEvent:" destination="x4U-yK-aJJ" eventType="touchUpInside" id="uys-2o-Fnq"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.12939157200000001" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="SOh-LJ-gkm" secondAttribute="centerX" id="ETk-6i-awb"/>
                             <constraint firstAttribute="centerX" secondItem="oul-3V-VhD" secondAttribute="centerX" id="SLI-cd-wC5"/>
@@ -531,6 +610,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWP-Vs-90q">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Au Dualanga">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -540,6 +620,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwx-gT-IXS">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Jam">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -549,6 +630,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dY8-B5-5E9">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Xitsungo Xa Africa">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -558,11 +640,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now playing: placeholder here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hal-p7-LvC">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.12939157200000001" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Qwx-gT-IXS" secondAttribute="centerX" id="5Q9-pg-pxy"/>
                             <constraint firstAttribute="centerX" secondItem="dY8-B5-5E9" secondAttribute="centerX" id="DRP-pH-eFi"/>
