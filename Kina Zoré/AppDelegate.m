@@ -21,8 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[ChimpKit sharedKit] setApiKey:@"db02af20c5f964d668e994e7d1785968-us5"];
-    UIButton *appearance = [UIButton appearance];
-    [appearance setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    //note to self: remember when I use this kind of command!
+    UIButton *buttonAppearance = [UIButton appearance];
+    [buttonAppearance setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    UILabel *labelAppearance = [UILabel appearance];
+    [labelAppearance setTextColor:[UIColor blackColor]];
+    UISlider *sliderAppearance = [UISlider appearance];
+    [sliderAppearance setThumbImage:[UIImage imageNamed:@"music-player-dot"] forState:UIControlStateNormal];
     return YES;
 }
 

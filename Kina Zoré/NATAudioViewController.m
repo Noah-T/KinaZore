@@ -75,7 +75,7 @@
     if (!self.isPaused) {
         //change the image from "play" to "pause"
         NSLog(@"start playing");
-        [self.playButton setBackgroundImage:[UIImage imageNamed:@"pause-button (1)"] forState:UIControlStateNormal];
+        [self.playButton setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
         
         
         
@@ -88,9 +88,9 @@
         
     } else {
         //player is paused and button is pressed again
-        //[UIImage imageNamed:@"audioplayer_play.png"]
+
         NSLog(@"stop playing");
-        [self.playButton setBackgroundImage:[UIImage imageNamed:@"play-button"] forState:UIControlStateNormal];
+        [self.playButton setBackgroundImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
         
         [self.audioPlayer pauseAudio];
         self.isPaused = FALSE;
