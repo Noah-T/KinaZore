@@ -22,13 +22,22 @@
     self.nowPlayingLabel.text = @"Au Dualanga";
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    //[self.navigationController setNavigationBarHidden:NO];
+}
+
 - (IBAction)playSelectedSong:(UIButton *)sender {
+    NSLog(@"current title string is: %@", [sender currentTitle]);
     if ([[sender currentTitle]isEqualToString:@"Au Dualanga"]) {
         [self.audioPlayer initPlayer:@"AuDualanga" fileExtension:@"mp3"];
         self.nowPlayingLabel.text = @"Au Dualanga";
+        
 
         
     } else if ([[sender currentTitle]isEqualToString:@"Jam"]) {
+        NSLog(@"Jam it is");
         [self.audioPlayer initPlayer:@"Jam" fileExtension:@"mp3"];
         self.nowPlayingLabel.text = @"6/8 Jam";
 
@@ -68,13 +77,11 @@
 
 -(IBAction)playAudioPressed:(id)playButton
 {
-    NSLog(@"push!");
     //clear the timer from the run loop
     [self.timer invalidate];
     //play audio for first time, or if pause was pressed
     if (!self.isPaused) {
         //change the image from "play" to "pause"
-        NSLog(@"start playing");
         [self.playButton setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
         
         
@@ -88,8 +95,6 @@
         
     } else {
         //player is paused and button is pressed again
-
-        NSLog(@"stop playing");
         [self.playButton setBackgroundImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
         
         [self.audioPlayer pauseAudio];
@@ -133,7 +138,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    NSLog(@"disappear");
     self.isPaused = YES;
     [self.playButton sendActionsForControlEvents:UIControlEventTouchUpInside];
 

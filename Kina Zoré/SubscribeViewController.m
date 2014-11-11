@@ -33,6 +33,12 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
 - (IBAction)subscribePressed:(id)sender {
     
     //make sure all fields are filled out

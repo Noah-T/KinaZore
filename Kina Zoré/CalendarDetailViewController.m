@@ -28,6 +28,8 @@
 {
     [super viewWillAppear:animated];
     
+    [self.navigationController setNavigationBarHidden:NO];
+    
     self.eventTitleLabel.text = self.event[@"summary"];
     self.eventDateLabel.text = self.event[@"formattedDate"];
     
