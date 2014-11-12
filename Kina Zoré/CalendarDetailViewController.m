@@ -68,7 +68,6 @@
         
         
         if (!err) {
-            NSLog(@"no error");
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Yay!" message:@"See you at the show!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
                 [alertview show];

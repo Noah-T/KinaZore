@@ -79,7 +79,6 @@
             
             [self.calendarTableView reloadData];
         }
-        NSLog(@"event array: %@", self.eventArray);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error: %@", error);
     }];
@@ -87,7 +86,6 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"count is %d", [self.eventArray count]);
     return [self.eventArray count];
     
 }

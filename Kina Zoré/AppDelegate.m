@@ -27,8 +27,6 @@
     [buttonAppearance setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     UILabel *labelAppearance = [UILabel appearance];
     [labelAppearance setTextColor:[UIColor blackColor]];
-    UISlider *sliderAppearance = [UISlider appearance];
-    [sliderAppearance setThumbImage:[UIImage imageNamed:@"music-player-dot"] forState:UIControlStateNormal];
     return YES;
 }
 

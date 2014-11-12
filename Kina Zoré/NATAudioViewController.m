@@ -25,11 +25,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    //[self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (IBAction)playSelectedSong:(UIButton *)sender {
-    NSLog(@"current title string is: %@", [sender currentTitle]);
     if ([[sender currentTitle]isEqualToString:@"Au Dualanga"]) {
         [self.audioPlayer initPlayer:@"AuDualanga" fileExtension:@"mp3"];
         self.nowPlayingLabel.text = @"Au Dualanga";
@@ -37,10 +36,8 @@
 
         
     } else if ([[sender currentTitle]isEqualToString:@"Jam"]) {
-        NSLog(@"Jam it is");
         [self.audioPlayer initPlayer:@"Jam" fileExtension:@"mp3"];
         self.nowPlayingLabel.text = @"6/8 Jam";
-
         
     } else if ([[sender currentTitle]isEqualToString:@"Xitsungo Xa Africa"]){
         [self.audioPlayer initPlayer:@"Xitsungo Xa Africa" fileExtension:@"mp3"];
