@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import "Chimpkit.h"
+#import "Stripe.h"
 
-
+NSString * const StripePublishableKey = @"pk_test_vXNldjlBZnauTG1OPxYDKJtD";
 
 @interface AppDelegate ()
 
@@ -21,6 +22,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[ChimpKit sharedKit] setApiKey:@"db02af20c5f964d668e994e7d1785968-us5"];
+    
+    //set Stripe api key
+    [Stripe setDefaultPublishableKey:StripePublishableKey];
     
     //note to self: remember when I use this kind of command!
     UIButton *buttonAppearance = [UIButton appearance];

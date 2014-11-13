@@ -21,13 +21,21 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - ChimpKit (3.1.1)
+  - PaymentKit (1.1.1)
+  - Stripe (2.2.1):
+    - Stripe/Core
+  - Stripe/Core (2.2.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - ChimpKit
+  - PaymentKit
+  - Stripe
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   ChimpKit: 23912164ebcad2c0405bf9c748dac317443d9d85
+  PaymentKit: f77b4d5cee45947949429c3d587e8eb160a3c9e2
+  Stripe: 437edda1493d6544e81068d47ae7f54d7a9eabb7
 
 COCOAPODS: 0.34.4

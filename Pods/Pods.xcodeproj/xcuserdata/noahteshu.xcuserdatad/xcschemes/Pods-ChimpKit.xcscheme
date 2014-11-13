@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83BFACDA53D5C224029AC164"
+               BlueprintIdentifier = "B54A11276ED7DF539750180E"
                BuildableName = "libPods-ChimpKit.a"
                BlueprintName = "Pods-ChimpKit"
                ReferencedContainer = "container:Pods.xcodeproj">
