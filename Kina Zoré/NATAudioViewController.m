@@ -110,6 +110,7 @@
         self.currentTimeSlider.value = [self.audioPlayer getCurrentAudioTime];
     }
     self.timeElapsed.text= [NSString stringWithFormat:@"%@", [self.audioPlayer timeFormat:[self.audioPlayer getCurrentAudioTime]]];
+        
     self.duration.text = [NSString stringWithFormat:@"-%@", [self.audioPlayer timeFormat:[self.audioPlayer getAudioDuration] - [self.audioPlayer getCurrentAudioTime]]];
 }
 
