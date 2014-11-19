@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Noah Teshu. All rights reserved.
 //
 
+#import <EventKit/EventKit.h>
+#import <EventKitUI/EventKitUI.h>
+
 #import <UIKit/UIKit.h>
 
 @interface CalendarDetailViewController : UIViewController

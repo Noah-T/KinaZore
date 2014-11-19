@@ -11,9 +11,10 @@
 #import "CalendarDetailViewController.h"
 #import <EventKitUI/EventKitUI.h>
 
-@interface NATCalendarViewController () <UITableViewDelegate, UITableViewDataSource, EKEventViewDelegate>
+
+@interface NATCalendarViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
-@property (strong, nonatomic) EKEventViewController *eventViewController;
+@property (strong, nonatomic) EKEventEditViewController *eventViewController;
 @property (strong, nonatomic) EKEvent *EKEvent;
 @property (strong, nonatomic) EKEventStore *eventStore;
 
@@ -27,8 +28,8 @@
     self.calendarTableView.delegate = self;
     self.calendarTableView.dataSource = self;
     
-    
-    
+    //create event view controller
+    self.eventViewController = [[EKEventEditViewController alloc]init];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -77,7 +78,6 @@
                 //format it into something more readable
                 NSString *formattedDate = [finalPresentationFormatter stringFromDate: startDate];
                 //add it to the event array
-                NSLog(@"formatted date is %@", formattedDate);
                 [mutableEventData setObject:formattedDate forKey:@"formattedDate"];
                 [mutableEventData setObject:startDate forKey:@"unformattedDate"];
                 [mutableEventData setObject:endDate forKey:@"unformattedEndDate"];
@@ -109,34 +109,33 @@
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
-     NSIndexPath *indexPath = [self.calendarTableView indexPathForSelectedRow];
-    
-     self.event = [self.eventArray objectAtIndex:indexPath.row];
-     EKEventViewController *destinationViewController = segue.destinationViewController;
-     destinationViewController.event = self.EKEvent;
- }
+// - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+// // Get the new view controller using [segue destinationViewController].
+// // Pass the selected object to the new view controller.
+//     NSLog(@"prepare for segue fired");
+//     NSLog(@"Inside of prepareforsegue, self.event has a vlue of: %@", self.event);
+//     if ([segue.identifier isEqualToString:@"calendarDetail"]) {
+//         NATEKEventViewController *destinationViewController = segue.destinationViewController;
+//         destinationViewController.dictionaryEvent = self.event;
+//     }
+//     
+// }
 
--(void)eventViewController:(EKEventViewController *)controller didCompleteWithAction:(EKEventViewAction)action
-{
-    [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"this was triggered");
-    }];
-}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSLog(@"didSelect fired");
+    self.event = [self.eventArray objectAtIndex:indexPath.row];
     NSLog(@"your selected event is: %@", self.event);
     
-    self.eventViewController = [[EKEventViewController alloc]init];
+    EKAuthorizationStatus authorizationStatus = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
+    self.eventViewController.event = nil;
     
-    
-    
+    //request access to user calendar/eventStore
     [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        
         self.EKEvent= [EKEvent eventWithEventStore:self.eventStore];
+        
         self.EKEvent.title= self.event[@"summary"];
         self.EKEvent.location = self.event[@"location"];
         self.EKEvent.startDate = self.event[@"unformattedDate"];
@@ -145,29 +144,31 @@
         NSError *err;
         [self.eventStore saveEvent:self.EKEvent span:EKSpanThisEvent commit:YES error:&err];
         NSLog(@"error is: %@", err);
-        
         self.eventViewController.event = self.EKEvent;
         
         
         
         
-        //         if (!err) {
-        //             dispatch_async(dispatch_get_main_queue(), ^{
-        //                 UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Yay!" message:@"See you at the show!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        //                 [alertview show];
-        //             });
-        //         } else if (err){
-        //             dispatch_async(dispatch_get_main_queue(), ^{
-        //                 UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Oops!" message:err.description delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        //                 [alertview show];
-        //             });
-        //             
-        //         }
+        
+                 if (!err) {
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Yay!" message:@"See you at the show!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                         [alertview show];
+                     });
+                 } else if (err){
+                     dispatch_async(dispatch_get_main_queue(), ^{
+                         UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Oops!" message:err.description delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                         [alertview show];
+                     });
+                     
+                 }
     }];
 
+    [self presentViewController:self.eventViewController animated:YES completion:^{
+        NSLog(@"viewController presented");
+    }];
 
-    [self.navigationController pushViewController:self.eventViewController animated:YES];
-}
+    }
 
 
 @end

@@ -13,6 +13,9 @@
 
 @interface CalendarDetailViewController ()
 
+@property (strong, nonatomic)EKEventStore *eventStore;
+
+@property (nonatomic, strong)EKEvent *EKEvent;
 - (IBAction)saveEvent:(id)sender;
 
 @end
@@ -22,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.eventStore = [[EKEventStore alloc]init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -32,6 +37,8 @@
     
     self.eventTitleLabel.text = self.event[@"summary"];
     self.eventDateLabel.text = self.event[@"formattedDate"];
+    
+
     
     
 }
@@ -54,16 +61,16 @@
 - (IBAction)saveEvent:(id)sender {
     
     NSLog(@"event values are: %@", self.event);
-    EKEventStore *eventStore = [[EKEventStore alloc]init];
-    [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-        EKEvent *event= [EKEvent eventWithEventStore:eventStore];
-        event.title= self.event[@"summary"];
-        event.location = self.event[@"location"];
-        event.startDate = self.event[@"unformattedDate"];
-        event.endDate = self.event[@"unformattedEndDate"];
-        [event setCalendar:[eventStore defaultCalendarForNewEvents]];
+    
+    [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        self.EKEvent= [EKEvent eventWithEventStore:self.eventStore];
+        self.EKEvent.title= self.event[@"summary"];
+        self.EKEvent.location = self.event[@"location"];
+        self.EKEvent.startDate = self.event[@"unformattedDate"];
+        self.EKEvent.endDate = self.event[@"unformattedEndDate"];
+        [self.EKEvent setCalendar:[self.eventStore defaultCalendarForNewEvents]];
         NSError *err;
-        [eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
+        [self.eventStore saveEvent:self.EKEvent span:EKSpanThisEvent commit:YES error:&err];
         NSLog(@"error is: %@", err);
         
         
