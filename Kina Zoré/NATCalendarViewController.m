@@ -12,7 +12,7 @@
 #import <EventKitUI/EventKitUI.h>
 
 
-@interface NATCalendarViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface NATCalendarViewController () <UITableViewDelegate, UITableViewDataSource, EKEventEditViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *calendarTableView;
 @property (strong, nonatomic) EKEventEditViewController *eventViewController;
 @property (strong, nonatomic) EKEvent *EKEvent;
@@ -28,8 +28,8 @@
     self.calendarTableView.delegate = self;
     self.calendarTableView.dataSource = self;
     
+    self.eventStore = [[EKEventStore alloc]init];
     //create event view controller
-    self.eventViewController = [[EKEventEditViewController alloc]init];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -124,51 +124,78 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"didSelect fired");
+
     self.event = [self.eventArray objectAtIndex:indexPath.row];
-    NSLog(@"your selected event is: %@", self.event);
+
+    __weak NATCalendarViewController *weakSelf = self;
     
-    EKAuthorizationStatus authorizationStatus = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
-    self.eventViewController.event = nil;
+    
     
     //request access to user calendar/eventStore
     [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
         
-        self.EKEvent= [EKEvent eventWithEventStore:self.eventStore];
+        self.eventViewController = [[EKEventEditViewController alloc]init];
+        self.eventViewController.editViewDelegate = self;
+        self.eventViewController.navigationItem.rightBarButtonItem = nil;
+        self.eventViewController.eventStore = self.eventStore;
         
+        self.EKEvent= [EKEvent eventWithEventStore:self.eventStore];
         self.EKEvent.title= self.event[@"summary"];
         self.EKEvent.location = self.event[@"location"];
         self.EKEvent.startDate = self.event[@"unformattedDate"];
         self.EKEvent.endDate = self.event[@"unformattedEndDate"];
         [self.EKEvent setCalendar:[self.eventStore defaultCalendarForNewEvents]];
-        NSError *err;
-        [self.eventStore saveEvent:self.EKEvent span:EKSpanThisEvent commit:YES error:&err];
-        NSLog(@"error is: %@", err);
-        self.eventViewController.event = self.EKEvent;
+                self.eventViewController.event = self.EKEvent;
         
+        [self presentViewController:self.eventViewController animated:YES completion:^{
+            NSLog(@"viewController presented");
+        }];
         
-        
-        
-        
-                 if (!err) {
-                     dispatch_async(dispatch_get_main_queue(), ^{
-                         UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Yay!" message:@"See you at the show!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-                         [alertview show];
-                     });
-                 } else if (err){
-                     dispatch_async(dispatch_get_main_queue(), ^{
-                         UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Oops!" message:err.description delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-                         [alertview show];
-                     });
-                     
-                 }
     }];
 
-    [self presentViewController:self.eventViewController animated:YES completion:^{
-        NSLog(@"viewController presented");
-    }];
+    
+    
+}
 
+
+- (void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action
+{
+    NSError *err;
+    switch (action) {
+            
+        case EKEventEditViewActionSaved:
+            NSLog(@"done pressed");
+            [controller.eventStore saveEvent:controller.event span:EKSpanThisEvent commit:YES error:&err];
+            NSLog(@"error is: %@", err);
+
+            break;
+        
+        case EKEventEditViewActionDeleted:
+        case EKEventEditViewActionCanceled:
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        break;
+        
+            
+        default:
+            break;
     }
-
+}
 
 @end
+
+
+//
+//                 if (!err) {
+//                     dispatch_async(dispatch_get_main_queue(), ^{
+//                         UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Yay!" message:@"See you at the show!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//                         [alertview show];
+//                     });
+//                 } else if (err){
+//                     dispatch_async(dispatch_get_main_queue(), ^{
+//                         UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Oops!" message:err.description delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//                         [alertview show];
+//                     });
+//
+//                 }
+//
