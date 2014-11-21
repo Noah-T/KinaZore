@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //create AVAudioSession to allow playback of audio even when ringer is off
+    NSError *error;
+    [[AVAudioSession sharedInstance]setCategory:AVAudioSessionCategoryPlayback error:&error];
+    [[AVAudioSession sharedInstance]setActive:YES error:&error];
     self.audioPlayer = [[NATAudioPlayer alloc]init];
     [self setupAudioPlayer:@"AuDualanga"];
     self.nowPlayingLabel.text = @"Au Dualanga";

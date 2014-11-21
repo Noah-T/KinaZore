@@ -52,7 +52,7 @@
         [[ChimpKit sharedKit]callApiMethod:@"lists/subscribe" withApiKey:@"db02af20c5f964d668e994e7d1785968-us5" params:params andCompletionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
             NSLog(@"response is: %@", response);
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-            NSLog(@"the status code is: %d", httpResponse.statusCode);
+            NSLog(@"the status code is: %ld", (long)httpResponse.statusCode);
             if ([response respondsToSelector:@selector(allHeaderFields)]) {
                 NSDictionary *dictionary = [httpResponse allHeaderFields];
                 NSLog(@"%@", [dictionary description]);

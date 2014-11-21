@@ -55,7 +55,7 @@
         timeFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
         finalPresentationFormatter = [[NSDateFormatter alloc]init];
         finalPresentationFormatter.dateFormat = @"MM/dd/yyyy";
-         
+        
         for (NSDictionary *eventData in responseObject[@"items"]) {
             NSMutableDictionary *mutableEventData = [eventData mutableCopy];
             if (!self.eventArray) {
@@ -106,9 +106,9 @@
     return cell;
 }
 
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
 // - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 // // Get the new view controller using [segue destinationViewController].
 // // Pass the selected object to the new view controller.
@@ -118,15 +118,15 @@
 //         NATEKEventViewController *destinationViewController = segue.destinationViewController;
 //         destinationViewController.dictionaryEvent = self.event;
 //     }
-//     
+//
 // }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     self.event = [self.eventArray objectAtIndex:indexPath.row];
-
+    
     __weak NATCalendarViewController *weakSelf = self;
     
     
@@ -145,14 +145,14 @@
         self.EKEvent.startDate = self.event[@"unformattedDate"];
         self.EKEvent.endDate = self.event[@"unformattedEndDate"];
         [self.EKEvent setCalendar:[self.eventStore defaultCalendarForNewEvents]];
-                self.eventViewController.event = self.EKEvent;
+        self.eventViewController.event = self.EKEvent;
         
         [self presentViewController:self.eventViewController animated:YES completion:^{
             NSLog(@"viewController presented");
         }];
         
     }];
-
+    
     
     
 }
@@ -167,15 +167,22 @@
             NSLog(@"done pressed");
             [controller.eventStore saveEvent:controller.event span:EKSpanThisEvent commit:YES error:&err];
             NSLog(@"error is: %@", err);
-
+            
+            if (!err) {
+                UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Yay!" message:@"See you at the show!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alertview show];
+            } else if(err){
+                
+                UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Oops!" message:err.description delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alertview show];
+            }
+            [self dismissViewControllerAnimated:YES completion:nil];
             break;
-        
+            
         case EKEventEditViewActionDeleted:
         case EKEventEditViewActionCanceled:
             [self dismissViewControllerAnimated:YES completion:nil];
-            
-        break;
-        
+            break;
             
         default:
             break;
@@ -185,17 +192,5 @@
 @end
 
 
-//
-//                 if (!err) {
-//                     dispatch_async(dispatch_get_main_queue(), ^{
-//                         UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Yay!" message:@"See you at the show!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-//                         [alertview show];
-//                     });
-//                 } else if (err){
-//                     dispatch_async(dispatch_get_main_queue(), ^{
-//                         UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Oops!" message:err.description delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-//                         [alertview show];
-//                     });
-//
-//                 }
-//
+
+
