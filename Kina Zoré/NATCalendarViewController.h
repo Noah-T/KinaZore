@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NATCalendarViewController : UIViewController
+@interface NATCalendarViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *eventArray;
 @property (strong, nonatomic) NSMutableDictionary *event;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+
 
 @end

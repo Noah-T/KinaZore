@@ -18,6 +18,7 @@
 @property (strong, nonatomic) EKEvent *EKEvent;
 @property (strong, nonatomic) EKEventStore *eventStore;
 
+
 @end
 
 @implementation NATCalendarViewController
@@ -25,6 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.refreshControl addTarget:self action:@selector(updateCalendar) forControlEvents:UIControlEventValueChanged];
+
+    
     self.calendarTableView.delegate = self;
     self.calendarTableView.dataSource = self;
     
@@ -32,63 +38,15 @@
     //create event view controller
 }
 
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+//    [self.tableView setContentOffset:CGPointMake(-44, -self.refreshControl.frame.size.height) animated:YES];
+
+    [self updateCalendar];
     
-    
-    self.eventArray = nil;
-    self.eventArray = [NSMutableArray array];
-    
-    NSString *calendarId = @"1fg4tpnbnn5sanom55b99cuflo@group.calendar.google.com";
-    NSString *apiKey = @"AIzaSyCAkVQVwMzmPHxbaLUAqvb6dYUwjKU5qnM";
-    NSString *urlFormat = [NSString stringWithFormat:@"https://www.googleapis.com/calendar/v3/calendars/%@/events?key=%@&fields=items(id,start,end,summary,status,location)", calendarId, apiKey];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [manager GET:urlFormat parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDateFormatter *dayFormatter, *timeFormatter, *finalPresentationFormatter;
-        dayFormatter = [[NSDateFormatter alloc]init];
-        dayFormatter.dateFormat = @"yyyy-mm-dd";
-        timeFormatter = [[NSDateFormatter alloc]init];
-        timeFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
-        finalPresentationFormatter = [[NSDateFormatter alloc]init];
-        finalPresentationFormatter.dateFormat = @"MM/dd/yyyy";
-        
-        for (NSDictionary *eventData in responseObject[@"items"]) {
-            NSMutableDictionary *mutableEventData = [eventData mutableCopy];
-            if (!self.eventArray) {
-                self.eventArray = [NSMutableArray array];
-            }
-            
-            NSDate *startDate;
-            NSDate *endDate;
-            NSDate *todayDate = [NSDate date];
-            if (mutableEventData[@"start"][@"date"]) {
-                startDate = [dayFormatter dateFromString:mutableEventData[@"start"][@"date"]];
-                endDate = [dayFormatter dateFromString:mutableEventData[@"end"][@"date"]];
-            } else if (mutableEventData[@"start"][@"dateTime"]){
-                startDate = [timeFormatter dateFromString:mutableEventData[@"start"][@"dateTime"]];
-                endDate = [timeFormatter dateFromString:mutableEventData[@"end"][@"dateTime"]];
-            }
-            
-            //if event date is after the current date
-            if ([startDate compare:todayDate] == NSOrderedDescending) {
-                //format it into something more readable
-                NSString *formattedDate = [finalPresentationFormatter stringFromDate: startDate];
-                //add it to the event array
-                [mutableEventData setObject:formattedDate forKey:@"formattedDate"];
-                [mutableEventData setObject:startDate forKey:@"unformattedDate"];
-                [mutableEventData setObject:endDate forKey:@"unformattedEndDate"];
-                [self.eventArray addObject:mutableEventData];
-            }
-            
-            [self.calendarTableView reloadData];
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error: %@", error);
-    }];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -188,6 +146,65 @@
             break;
     }
 }
+
+- (void)updateCalendar
+{
+    self.eventArray = [NSMutableArray array];
+    
+    NSString *calendarId = @"1fg4tpnbnn5sanom55b99cuflo@group.calendar.google.com";
+    NSString *apiKey = @"AIzaSyCAkVQVwMzmPHxbaLUAqvb6dYUwjKU5qnM";
+    NSString *urlFormat = [NSString stringWithFormat:@"https://www.googleapis.com/calendar/v3/calendars/%@/events?key=%@&fields=items(id,start,end,summary,status,location)", calendarId, apiKey];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [manager GET:urlFormat parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDateFormatter *dayFormatter, *timeFormatter, *finalPresentationFormatter;
+        dayFormatter = [[NSDateFormatter alloc]init];
+        dayFormatter.dateFormat = @"yyyy-mm-dd";
+        timeFormatter = [[NSDateFormatter alloc]init];
+        timeFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+        finalPresentationFormatter = [[NSDateFormatter alloc]init];
+        finalPresentationFormatter.dateFormat = @"MM/dd/yyyy";
+        
+        for (NSDictionary *eventData in responseObject[@"items"]) {
+            NSMutableDictionary *mutableEventData = [eventData mutableCopy];
+            if (!self.eventArray) {
+                self.eventArray = [NSMutableArray array];
+            }
+            
+            NSDate *startDate;
+            NSDate *endDate;
+            NSDate *todayDate = [NSDate date];
+            if (mutableEventData[@"start"][@"date"]) {
+                startDate = [dayFormatter dateFromString:mutableEventData[@"start"][@"date"]];
+                endDate = [dayFormatter dateFromString:mutableEventData[@"end"][@"date"]];
+            } else if (mutableEventData[@"start"][@"dateTime"]){
+                startDate = [timeFormatter dateFromString:mutableEventData[@"start"][@"dateTime"]];
+                endDate = [timeFormatter dateFromString:mutableEventData[@"end"][@"dateTime"]];
+            }
+            
+            //if event date is after the current date
+            if ([startDate compare:todayDate] == NSOrderedDescending) {
+                //format it into something more readable
+                NSString *formattedDate = [finalPresentationFormatter stringFromDate: startDate];
+                //add it to the event array
+                [mutableEventData setObject:formattedDate forKey:@"formattedDate"];
+                [mutableEventData setObject:startDate forKey:@"unformattedDate"];
+                [mutableEventData setObject:endDate forKey:@"unformattedEndDate"];
+                [self.eventArray addObject:mutableEventData];
+            }
+            
+            [self.calendarTableView reloadData];
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", error);
+    }];
+    
+    if ([self.refreshControl isRefreshing]) {
+        [self.refreshControl endRefreshing];
+    }
+}
+
 
 @end
 
