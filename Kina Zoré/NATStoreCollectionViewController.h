@@ -15,5 +15,7 @@
 @property (strong, nonatomic) NSArray *itemsForSale;
 @property (strong, nonatomic) NSMutableArray *itemsInCart;
 
+- (IBAction)showAlbumDetail:(id)sender;
+
 @end
 
