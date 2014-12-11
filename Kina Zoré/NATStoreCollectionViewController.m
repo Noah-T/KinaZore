@@ -40,12 +40,12 @@ static NSString * const reuseIdentifier = @"Cell";
     self.itemsForSale = @[acdcBag, acdcFigurines, acdcHat, acdcMug, acdcRing, oneDirectionBracelet];
     
     //album detail view
-    self.albumDetailView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - 170)];
+    self.albumDetailView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - 200)];
     [self.albumDetailView setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:self.albumDetailView];
     
     //T-shirt detail view
-    self.tshirtDetailView = [[UIView alloc]initWithFrame:CGRectMake(0, 170, self.view.frame.size.width, self.view.frame.size.height)];
+    self.tshirtDetailView = [[UIView alloc]initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height)];
     [self.tshirtDetailView setBackgroundColor:[UIColor blueColor]];
     [self.view addSubview:self.tshirtDetailView];
     
@@ -89,13 +89,23 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //tshirt button constraints
     showTshirts.translatesAutoresizingMaskIntoConstraints = NO;
-    NSArray *tshirtButtonConstraints = @[
-                                         [NSLayoutConstraint constraintsWithVisualFormat:@"H:[showTshirts(myVar)]" options:0 metrics:@{@"myVar": [NSNumber numberWithDouble:width] } views:viewsDictionary],
-                                         [NSLayoutConstraint constraintsWithVisualFormat:@"V:[showTshirts(myHeight)]" options:0 metrics:@{@"myHeight": [NSNumber numberWithDouble:height]} views:viewsDictionary]
-                                         ];
+//    NSArray *tshirtButtonConstraintsHorizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[showTshirts(myVar)]" options:0 metrics:@{@"myVar": [NSNumber numberWithDouble:width] } views:viewsDictionary];
+//    NSArray *tshirtButtonConstraintsVertical =[NSLayoutConstraint constraintsWithVisualFormat:@"V:[showTshirts(myHeight)]" options:0 metrics:@{@"myHeight": [NSNumber numberWithDouble:height]} views:viewsDictionary];
+    NSArray *tshirtButtonConstraints = @[[NSLayoutConstraint constraintsWithVisualFormat:@"H:[showTshirts(myVar)]" options:0 metrics:@{@"myVar": [NSNumber numberWithDouble:width] } views:viewsDictionary]];
+    NSArray *tshirtBottomConstraint = [NSLayoutConstraint
+                                 constraintsWithVisualFormat:@"V:|-yourMom-[showTshirts]"
+                                 options:0
+                                 metrics:@{@"yourMom": @20}
+                                 views:viewsDictionary];
+
+//                                         ];
     NSLayoutConstraint *showTshirtsCenterConstraint = [NSLayoutConstraint constraintWithItem:showTshirts attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.tshirtDetailView attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f];
-    [showTshirts addConstraints:tshirtButtonConstraints];
-    //[self.tshirtDetailView addConstraint:showTshirtsCenterConstraint];
+//    [showTshirts addConstraint:tshirtButtonConstraintsHorizontal[0]];
+//    [showTshirts addConstraint:tshirtButtonConstraintsVertical[0]];
+    [showTshirts addConstraints:tshirtButtonConstraints[0]];
+
+    [self.tshirtDetailView addConstraint:showTshirtsCenterConstraint];
+    [self.tshirtDetailView addConstraint:tshirtBottomConstraint[0]];
     //tshirt label constraints
     NSArray *widthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[tshirtLabel(myVar)]" options:0 metrics:@{@"myVar": [NSNumber numberWithDouble:width] } views:viewsDictionary];
     
@@ -144,6 +154,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.detailIsVisible = NO;
     self.tshirtsAreVisible = NO;
+
+
 }
 
 /*
@@ -214,7 +226,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.view bringSubviewToFront:self.albumDetailView];
     if (!self.detailIsVisible) {
         [UIView animateWithDuration:0.5 animations:^{
-            self.albumDetailView.frame = CGRectMake(0, 170, self.view.frame.size.width, self.view.frame.size.height-170);
+            self.albumDetailView.frame = CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height-170);
         } completion:^(BOOL finished) {
             NSLog(@"first animation happened");
         }];
@@ -232,27 +244,30 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (void)showTshirts {
-    
+
+    [self.view bringSubviewToFront:self.tshirtDetailView];
+
     NSLog(@"heyyy");
     if (!self.tshirtsAreVisible) {
-        
         [UIView animateWithDuration:0.5 animations:^{
-            [self.view bringSubviewToFront:self.tshirtDetailView];
 
             
             self.tshirtDetailView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
             self.souvenirsDetailView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+            self.albumDetailView.frame = CGRectMake(0, 400, self.view.frame.size.width, self.view.frame.size.height);
+
         } completion:^(BOOL finished) {
-            
+
         }];
         self.tshirtsAreVisible = YES;
     } else {
         [UIView animateWithDuration:0.5 animations:^{
             [self.view bringSubviewToFront:self.souvenirsDetailView];
-            self.tshirtDetailView.frame = CGRectMake(0, 170, self.view.frame.size.width, self.view.frame.size.height);
+            self.tshirtDetailView.frame = CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height);
             self.souvenirsDetailView.frame = CGRectMake(0, 340, self.view.frame.size.width, self.view.frame.size.height);
         } completion:^(BOOL finished) {
             //[self.view sendSubviewToBack:self.tshirtDetailView];
+
 
         }];
         self.tshirtsAreVisible = NO;
