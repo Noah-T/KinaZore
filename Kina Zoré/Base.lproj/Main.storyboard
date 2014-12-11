@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C68m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0lQ-md-Rgl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C78c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0lQ-md-Rgl">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -975,6 +975,7 @@
                         <viewControllerLayoutGuide type="bottom" id="aCv-cS-D6q"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dTp-Kx-lag">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObO-u0-Qw4">
@@ -1101,15 +1102,15 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <exclude reference="W7X-62-fpE"/>
-                                                <exclude reference="ESm-z7-86x"/>
-                                                <exclude reference="jdX-ho-BcY"/>
-                                                <exclude reference="wGb-dg-p5o"/>
-                                                <exclude reference="zrd-xe-jEt"/>
                                                 <exclude reference="CSm-aw-7uE"/>
                                                 <exclude reference="OCN-z6-u13"/>
                                                 <exclude reference="X4o-Of-BWE"/>
                                                 <exclude reference="pEP-p8-6uP"/>
                                                 <exclude reference="vL1-QP-UjV"/>
+                                                <exclude reference="ESm-z7-86x"/>
+                                                <exclude reference="jdX-ho-BcY"/>
+                                                <exclude reference="wGb-dg-p5o"/>
+                                                <exclude reference="zrd-xe-jEt"/>
                                                 <exclude reference="1ut-fR-qOy"/>
                                                 <exclude reference="6dS-pj-crb"/>
                                                 <exclude reference="9DE-xg-81d"/>
@@ -1127,15 +1128,15 @@
                                             </mask>
                                             <mask key="constraints">
                                                 <include reference="W7X-62-fpE"/>
-                                                <exclude reference="ESm-z7-86x"/>
-                                                <include reference="jdX-ho-BcY"/>
-                                                <exclude reference="wGb-dg-p5o"/>
-                                                <include reference="zrd-xe-jEt"/>
                                                 <include reference="CSm-aw-7uE"/>
                                                 <exclude reference="OCN-z6-u13"/>
                                                 <include reference="X4o-Of-BWE"/>
                                                 <include reference="pEP-p8-6uP"/>
                                                 <exclude reference="vL1-QP-UjV"/>
+                                                <exclude reference="ESm-z7-86x"/>
+                                                <include reference="jdX-ho-BcY"/>
+                                                <exclude reference="wGb-dg-p5o"/>
+                                                <include reference="zrd-xe-jEt"/>
                                                 <include reference="1ut-fR-qOy"/>
                                                 <exclude reference="6dS-pj-crb"/>
                                                 <exclude reference="9DE-xg-81d"/>
