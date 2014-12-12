@@ -27,10 +27,11 @@ NSString * const StripePublishableKey = @"pk_test_vXNldjlBZnauTG1OPxYDKJtD";
     [Stripe setDefaultPublishableKey:StripePublishableKey];
     
     //note to self: remember when I use this kind of command!
-    UIButton *buttonAppearance = [UIButton appearance];
-    [buttonAppearance setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    UILabel *labelAppearance = [UILabel appearance];
+  
+    
+     UILabel *labelAppearance = [UILabel appearance];
     [labelAppearance setTextColor:[UIColor blackColor]];
+    
     return YES;
 }
 

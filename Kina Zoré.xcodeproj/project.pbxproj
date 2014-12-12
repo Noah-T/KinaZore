@@ -24,6 +24,7 @@
 		DEADFFA21A0713C100251F65 /* KZ-app-icon1-01.png in Resources */ = {isa = PBXBuildFile; fileRef = DEADFFA11A0713C100251F65 /* KZ-app-icon1-01.png */; };
 		DEC2584A1A041CFC00B3B87E /* NATAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */; };
 		DEDC782C1A02C71300884366 /* NATHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC782B1A02C71300884366 /* NATHomeViewController.m */; };
+		DEEA1B3A1A3B8CB8000EF118 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DEEA1B391A3B8CB8000EF118 /* MyriadPro-Regular.otf */; };
 		DEF5EEE21A0178BC00620B10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF5EEE11A0178BC00620B10 /* main.m */; };
 		DEF5EEE51A0178BC00620B10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF5EEE41A0178BC00620B10 /* AppDelegate.m */; };
 		DEF5EEE81A0178BC00620B10 /* SubscribeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF5EEE71A0178BC00620B10 /* SubscribeViewController.m */; };
@@ -71,6 +72,7 @@
 		DEC258491A041CFC00B3B87E /* NATAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATAudioPlayer.m; sourceTree = "<group>"; };
 		DEDC782A1A02C71300884366 /* NATHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NATHomeViewController.h; sourceTree = "<group>"; };
 		DEDC782B1A02C71300884366 /* NATHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NATHomeViewController.m; sourceTree = "<group>"; };
+		DEEA1B391A3B8CB8000EF118 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
 		DEF5EEDC1A0178BC00620B10 /* Kina Zoré.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kina Zoré.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF5EEE01A0178BC00620B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEF5EEE11A0178BC00620B10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -129,6 +131,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DEEA1B381A3B8CA5000EF118 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DEEA1B391A3B8CB8000EF118 /* MyriadPro-Regular.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		DEF5EED31A0178BC00620B10 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +165,7 @@
 			children = (
 				DEF5EEE91A0178BC00620B10 /* Main.storyboard */,
 				DE9714701A323FD5001BC035 /* NATStoreItem.h */,
+				DEEA1B381A3B8CA5000EF118 /* Fonts */,
 				DE9714711A323FD5001BC035 /* NATStoreItem.m */,
 				DE97146D1A323F58001BC035 /* NATStoreItemCollectionViewCell.h */,
 				DE97146E1A323F58001BC035 /* NATStoreItemCollectionViewCell.m */,
@@ -299,6 +310,7 @@
 			files = (
 				DEADFFA21A0713C100251F65 /* KZ-app-icon1-01.png in Resources */,
 				DEF5EEEB1A0178BC00620B10 /* Main.storyboard in Resources */,
+				DEEA1B3A1A3B8CB8000EF118 /* MyriadPro-Regular.otf in Resources */,
 				DEF5EEF01A0178BC00620B10 /* LaunchScreen.xib in Resources */,
 				DEA696621A06ECDD00BAC673 /* Jam.mp3 in Resources */,
 				DEA6965D1A06E57D00BAC673 /* AuDualanga.mp3 in Resources */,
