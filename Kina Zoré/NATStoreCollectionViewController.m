@@ -68,7 +68,8 @@ static NSString * const reuseIdentifier = @"Cell";
     double tshirtImageWidth = self.view.frame.size.width * 0.8;
     double tshirtImageHeight = self.view.frame.size.height * 0.33;
     
-    UIImageView *tshirtImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height * 0.33, tshirtImageWidth, tshirtImageHeight)];
+    CGRect detailImageFrame = CGRectMake(0, self.view.frame.size.height * 0.33, tshirtImageWidth, tshirtImageHeight);
+    UIImageView *tshirtImageView = [[UIImageView alloc]initWithFrame:detailImageFrame];
     tshirtImageView.image = [UIImage imageNamed:@"kzlive"];
     [self.tshirtDetailView addSubview:tshirtImageView];
     
@@ -83,10 +84,13 @@ static NSString * const reuseIdentifier = @"Cell";
     [showSouvenirsButton setBackgroundImage:[UIImage imageNamed:@"posters"] forState:UIControlStateNormal];
     
     [self.souvenirsDetailView addSubview:showSouvenirsButton];
-
     
+    //souvenirImageview
+    UIImageView *souvenirImageView = [[UIImageView alloc]initWithFrame:detailImageFrame];
+    souvenirImageView.image = [UIImage imageNamed:@"kzlive"];
+    [self.souvenirsDetailView addSubview:souvenirImageView];
     //autolayout
-    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(tshirtLabel, self.tshirtDetailView, showTshirts, self.souvenirsDetailView, showSouvenirsButton, tshirtImageView);
+    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(tshirtLabel, self.tshirtDetailView, showTshirts, self.souvenirsDetailView, showSouvenirsButton, tshirtImageView, souvenirImageView);
     tshirtLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
     double width = self.view.frame.size.width*0.8;
@@ -166,6 +170,29 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.souvenirsDetailView addConstraint:souvenirCenterConstraint];
 
     [self.souvenirsDetailView addConstraint:souvenirBottomConstraint[0]];
+    
+    //souvenir imageView constraints
+    showSouvenirsButton.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    souvenirImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSLayoutConstraint *souvenirImageViewConstraint = [NSLayoutConstraint constraintWithItem:souvenirImageView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.souvenirsDetailView attribute:NSLayoutAttributeCenterX multiplier:1.0f constant:0.0f];
+    
+    
+    NSArray *souvenirImageViewWidthConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[souvenirImageView(myVar)]" options:0 metrics:@{@"myVar": [NSNumber numberWithDouble:tshirtImageWidth] } views:viewsDictionary];
+    
+    NSArray *souvenirImageViewHeightConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[souvenirImageView(myHeight)]" options:0 metrics:@{@"myHeight": [NSNumber numberWithDouble:tshirtImageHeight]} views:viewsDictionary];
+    
+    NSArray *souvenirImageViewBottomConstraint = [NSLayoutConstraint
+                                         constraintsWithVisualFormat:@"V:[showSouvenirsButton]-yourMom-[souvenirImageView]"
+                                         options:0
+                                         metrics:@{@"yourMom": [NSNumber numberWithDouble:fivePercentPadding]}
+                                         views:viewsDictionary];
+    [souvenirImageView addConstraint:souvenirImageViewWidthConstraint[0]];
+    [souvenirImageView addConstraint:souvenirImageViewHeightConstraint[0]];
+    [self.souvenirsDetailView addConstraint:souvenirImageViewConstraint];
+    [self.souvenirsDetailView addConstraint:souvenirImageViewBottomConstraint[0]];
+    
     
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -264,7 +291,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
     [self.view bringSubviewToFront:self.tshirtDetailView];
 
-    NSLog(@"heyyy");
     if (!self.tshirtsAreVisible) {
         [UIView animateWithDuration:0.5 animations:^{
 
@@ -297,7 +323,7 @@ static NSString * const reuseIdentifier = @"Cell";
         [UIView animateWithDuration:0.5 animations:^{
             self.souvenirsDetailView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         } completion:^(BOOL finished) {
-            NSLog(@"first animation happened");
+
         }];
         self.souvenirsAreVisible = YES;
         
@@ -306,7 +332,7 @@ static NSString * const reuseIdentifier = @"Cell";
             self.souvenirsDetailView.frame = CGRectMake(0, self.view.frame.size.height * 0.74, self.view.frame.size.width, self.view.frame.size.height);
             self.tshirtDetailView.frame = CGRectMake(0, self.view.frame.size.height * 0.47, self.view.frame.size.width, self.view.frame.size.height);
         } completion:^(BOOL finished) {
-            NSLog(@"animation happened");
+
         }];
         self.souvenirsAreVisible = NO;
         
